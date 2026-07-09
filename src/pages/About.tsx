@@ -1,397 +1,155 @@
+import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import "./About.css";
+// మీ ఫోటోని ఇక్కడ ఇంపోర్ట్ చేయండి
+import FounderImg from "../assets/founder.jpg"; 
 
-function About() {
+const About: React.FC = () => {
   return (
     <>
       <Navbar />
 
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="container">
-          <span className="about-tag">🌴 Premium Coconut Brand</span>
-
-          <h1>About CocoFresh</h1>
-
+        <div className="container hero-content">
+          <span className="about-tag">🌿 Nature's Purest Harvest</span>
+          <h1>Welcome to CocoFresh</h1>
           <p className="hero-text">
-            Bringing Nature's Finest Coconut Products Directly From Trusted
-            Farmers To Every Family With Quality, Freshness And Trust.
+            We are more than just a brand; we are a movement towards healthier living. 
+            Committed to bringing premium, farm-fresh agricultural products—starting 
+            from our signature coconut range to a variety of natural superfoods—straight 
+            from trusted farmers to your family's table.
           </p>
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="about-section">
+      <section className="about-section story-section">
         <div className="container">
-
           <div className="section-title">
-            <h2>Our Story</h2>
-            <p>Every great business begins with a dream.</p>
+            <h2>Our Journey</h2>
+            <p>From the fertile lands of Andhra Pradesh to your kitchen.</p>
           </div>
-
-          <div className="story-card">
-
-            <p>
-              CocoFresh was created with one simple vision: delivering premium
-              quality coconut products directly from trusted farms to customers.
-              We noticed that many people struggled to find naturally grown,
-              fresh and hygienic coconut products at reasonable prices.
-            </p>
-
-            <p>
-              Instead of depending on multiple middlemen, our goal is to connect
-              farmers directly with customers while maintaining the highest
-              standards of quality. Every coconut is carefully selected,
-              inspected and packed to preserve its freshness and natural taste.
-            </p>
-
-            <p>
-              Our business is built on honesty, transparency and long-term
-              customer relationships. We believe every family deserves healthy,
-              natural and chemical-free coconut products delivered with care.
-            </p>
-
-            <p>
-              Today CocoFresh continues to grow by supporting local farmers,
-              introducing premium coconut products and providing excellent
-              customer service across different regions.
-            </p>
-
+          <div className="story-content">
+            <div className="story-text">
+              <p>
+                <strong>CocoFresh</strong> was born out of a deep-rooted commitment to bridge the 
+                gap between hardworking local farming communities and health-conscious 
+                consumers. In a world full of processed foods, we believe that true 
+                health and wellness come from nature, untouched and unadulterated.
+              </p>
+              <p>
+                What started as a humble initiative to deliver the finest premium coconuts 
+                has now blossomed into a wider mission. Today, we carefully curate a 
+                selection of farm-fresh perishables and essential natural products. 
+                Every single item that carries the CocoFresh name undergoes strict hygiene, 
+                quality, and ethical sourcing checks.
+              </p>
+            </div>
+            <div className="story-stats">
+              <div className="stat-box">
+                <h3>100%</h3>
+                <p>Natural & Pure</p>
+              </div>
+              <div className="stat-box">
+                <h3>50+</h3>
+                <p>Direct Farmers</p>
+              </div>
+              <div className="stat-box">
+                <h3>Zero</h3>
+                <p>Harmful Chemicals</p>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
 
-      {/* Founder */}
-      <section className="about-founder">
-
+      {/* Trust & Values Section */}
+      <section className="about-section values-section bg-light">
         <div className="container">
-
           <div className="section-title">
-            <h2>Meet Our Founder</h2>
-            <p>The person behind CocoFresh.</p>
+            <h2>Why Trust CocoFresh?</h2>
+            <p>Our core values define everything we do.</p>
           </div>
+          <div className="values-grid">
+            <div className="value-card">
+              <span className="value-icon">🧑‍🌾</span>
+              <h3>Farmer First</h3>
+              <p>We source directly from farmers, ensuring they get fair prices and you get the freshest produce.</p>
+            </div>
+            <div className="value-card">
+              <span className="value-icon">🛡️</span>
+              <h3>Strict Quality Control</h3>
+              <p>Every product passes through rigorous quality and hygiene checks before it reaches your home.</p>
+            </div>
+            <div className="value-card">
+              <span className="value-icon">💯</span>
+              <h3>100% Transparency</h3>
+              <p>No hidden ingredients, no false claims. What you see on our label is exactly what you get.</p>
+            </div>
+            <div className="value-card">
+              <span className="value-icon">♻️</span>
+              <h3>Eco-Friendly</h3>
+              <p>We care for the planet just as much as your health, using sustainable packaging wherever possible.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="founder-card">
-
+      {/* Founder Section */}
+      <section className="about-section about-founder">
+        <div className="container">
+          <div className="founder-wrapper">
             <div className="founder-image">
-              👨‍💼
+              <img src={FounderImg} alt="Sathish Kumar - Founder of CocoFresh" />
             </div>
-
             <div className="founder-content">
-
-              <h3>Sathish Kumar</h3>
-
-              <span className="designation">
-                Founder & CEO
-              </span>
-
+              <span className="designation">Message from the Founder</span>
+              <h2>Sathish Kumar</h2>
+              <blockquote>
+                "My vision for CocoFresh has always been simple: to provide families 
+                with food that is as pure as nature intended. We are building a brand 
+                based on uncompromised trust, chemical-free purity, and a deep respect 
+                for our farmers."
+              </blockquote>
               <p>
-                Sathish Kumar founded CocoFresh with the dream of creating one
-                of India's most trusted coconut brands. His vision is to support
-                local farmers while providing customers with premium quality,
-                naturally sourced coconut products.
+                With deep roots in agriculture and a sharp vision for modern supply chain 
+                efficiency, Sathish leads CocoFresh's mission to revolutionize how fresh 
+                produce reaches consumers.
               </p>
-
-              <div className="founder-details">
-
-                <div>
-                  <strong>Education</strong>
-                  <p>Bachelor's Degree</p>
-                </div>
-
-                <div>
-                  <strong>Location</strong>
-                  <p>
-                    T. Narasapuram,
-                    Chintalapudi Mandal,
-                    Eluru District,
-                    Andhra Pradesh
-                  </p>
-                </div>
-
-                <div>
-                  <strong>Experience</strong>
-                  <p>
-                    Coconut Business &
-                    Product Development
-                  </p>
-                </div>
-
-              </div>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* Mission Vision */}
-
-      <section className="about-mission">
-
+      {/* Our Range Section */}
+      <section className="about-section products-section">
         <div className="container">
-
-          <div className="mission-grid">
-
-            <div className="mission-card">
-
-              <div className="icon">
-                🎯
-              </div>
-
-              <h3>Our Mission</h3>
-
-              <p>
-                Deliver premium coconut products with exceptional quality,
-                hygiene and customer satisfaction while supporting farmers.
-              </p>
-
-            </div>
-
-            <div className="mission-card">
-
-              <div className="icon">
-                🚀
-              </div>
-
-              <h3>Our Vision</h3>
-
-              <p>
-                Become India's most trusted coconut company through innovation,
-                quality products and outstanding customer experience.
-              </p>
-
-            </div>
-
-            <div className="mission-card">
-
-              <div className="icon">
-                ❤️
-              </div>
-
-              <h3>Our Values</h3>
-
-              <p>
-                Honesty, Quality, Sustainability, Customer Trust,
-                Farmer Support and Continuous Innovation.
-              </p>
-
-            </div>
-
+          <div className="section-title">
+            <h2>Our Product Range</h2>
+            <p>Carefully handpicked for your daily needs.</p>
           </div>
-
+          <div className="about-grid">
+            <div className="card">
+              <h3>🥥 Premium Coconuts</h3>
+              <p>Grade-A fresh coconuts, nutritious copra, and cold-pressed pure coconut oil for cooking and wellness.</p>
+            </div>
+            <div className="card">
+              <h3>🍃 Natural Superfoods</h3>
+              <p>Nutrient-rich, farm-fresh produce sourced daily to keep your family healthy and active.</p>
+            </div>
+            <div className="card">
+              <h3>📦 Sustainable Goods</h3>
+              <p>Eco-friendly daily essentials designed to reduce carbon footprint without compromising on quality.</p>
+            </div>
+          </div>
         </div>
-
       </section>
-        {/* Company Timeline */}
 
-<section className="about-section light">
-
-  <div className="container">
-
-    <div className="section-title">
-      <h2>Our Journey</h2>
-      <p>Every milestone reflects our commitment to quality.</p>
-    </div>
-
-    <div className="timeline">
-
-      <div className="timeline-item">
-        <h3>🌱 Beginning</h3>
-        <p>
-          CocoFresh started with a dream of supplying premium coconut products
-          directly from farmers.
-        </p>
-      </div>
-
-      <div className="timeline-item">
-        <h3>🥥 Product Expansion</h3>
-        <p>
-          Added Tender Coconut, Fresh Coconut, Copra, Coconut Oil,
-          Coconut Shell Products and more.
-        </p>
-      </div>
-
-      <div className="timeline-item">
-        <h3>🚚 Customer Service</h3>
-        <p>
-          Focused on fast delivery, customer satisfaction and quality assurance.
-        </p>
-      </div>
-
-      <div className="timeline-item">
-        <h3>🚀 Future Goal</h3>
-        <p>
-          Expand across India and become one of the country's most trusted
-          coconut brands.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* Statistics */}
-
-<section className="stats-section">
-
-  <div className="container">
-
-    <div className="stats-grid">
-
-      <div className="stat-card">
-        <h2>1000+</h2>
-        <p>Happy Customers</p>
-      </div>
-
-      <div className="stat-card">
-        <h2>50+</h2>
-        <p>Premium Products</p>
-      </div>
-
-      <div className="stat-card">
-        <h2>100%</h2>
-        <p>Natural Quality</p>
-      </div>
-
-      <div className="stat-card">
-        <h2>24/7</h2>
-        <p>Customer Support</p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* Quality Process */}
-
-<section className="about-section">
-
-  <div className="container">
-
-    <div className="section-title">
-      <h2>Our Quality Process</h2>
-    </div>
-
-    <div className="about-grid">
-
-      <div className="card">
-        <h3>🌴 Farm Selection</h3>
-        <p>
-          Fresh coconuts are collected from trusted farms.
-        </p>
-      </div>
-
-      <div className="card">
-        <h3>🔍 Quality Check</h3>
-        <p>
-          Every product is inspected before packing.
-        </p>
-      </div>
-
-      <div className="card">
-        <h3>📦 Safe Packing</h3>
-        <p>
-          Premium packaging keeps products fresh.
-        </p>
-      </div>
-
-      <div className="card">
-        <h3>🚚 Fast Delivery</h3>
-        <p>
-          Delivered safely to customers.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* FAQ */}
-
-<section className="about-section light">
-
-  <div className="container">
-
-    <div className="section-title">
-      <h2>Frequently Asked Questions</h2>
-    </div>
-
-    <div className="faq-box">
-
-      <h3>🥥 Are your coconuts farm fresh?</h3>
-
-      <p>
-        Yes. We source directly from trusted farmers.
-      </p>
-
-      <h3>🚚 Do you provide delivery?</h3>
-
-      <p>
-        Yes. Delivery depends on service availability.
-      </p>
-
-      <h3>⭐ Why choose CocoFresh?</h3>
-
-      <p>
-        Premium quality, trusted service, hygienic packing and customer
-        satisfaction.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-{/* Contact CTA */}
-
-<section className="contact-cta">
-
-  <div className="container">
-
-    <h2>Ready To Experience Premium Coconut Products?</h2>
-
-    <p>
-      Contact CocoFresh today and enjoy naturally fresh coconut products.
-    </p>
-
-    <div className="cta-buttons">
-
-      <a
-        href="https://wa.me/919553679915"
-        target="_blank"
-        rel="noreferrer"
-        className="whatsapp-btn"
-      >
-        WhatsApp Us
-      </a>
-
-      <a
-        href="tel:+919553679915"
-        className="call-btn"
-      >
-        Call Now
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
       <Footer />
     </>
   );
-}
+};
 
 export default About;
