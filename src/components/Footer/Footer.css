@@ -1,0 +1,41 @@
+/* ==============================
+   ULTRA-SLIM LUXURY FOOTER
+============================== */
+.footer {
+  background: #021a0e;
+  padding: 15px 5%; /* ప్యాడింగ్ తగ్గించాము */
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* బ్రాండ్ పేరుకి, కాపీరైట్‌కి మధ్య దూరం */
+}
+
+.footer-content h2 { 
+  font-size: 0.9rem; /* సైజు తగ్గించాము */
+  color: #fff; 
+  margin: 0; 
+  letter-spacing: 3px; 
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.footer-content p {
+  font-size: 0.6rem; /* సైజు తగ్గించాము */
+  color: #555;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .footer-content { 
+    flex-direction: column; 
+    gap: 8px; /* మొబైల్‌లో గ్యాప్ తగ్గించాము */
+  }
+}

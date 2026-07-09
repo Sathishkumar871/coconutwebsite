@@ -1,0 +1,23 @@
+.contact{
+padding:100px 0;
+background:#1B5E20;
+color:white;
+text-align:center;
+}
+
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.contact-buttons a{
+padding:15px 35px;
+background:white;
+color:#1B5E20;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+}

@@ -1,0 +1,450 @@
+/* ==============================
+   PREMIUM LUXURY ABOUT PAGE
+   Coconut Business Website
+============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --green: #075c32;
+    --light-green: #159447;
+    --gold: #d4af37;
+    --cream: #faf7ef;
+    --text-dark: #333;
+    --text-light: #666;
+    --card-bg: #ffffff;
+    --shadow-soft: 0 20px 50px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 35px 80px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ==============================
+   1. HERO SECTION
+============================== */
+.about-hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        rgba(4, 75, 40, 0.92),
+        rgba(21, 148, 71, 0.85)
+    ),
+    url("/images/coconut-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax Effect */
+    color: white;
+    text-align: center;
+    padding: clamp(80px, 10vw, 150px) 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    width: clamp(300px, 40vw, 600px);
+    height: clamp(300px, 40vw, 600px);
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    top: -10%;
+    right: -10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.about-tag {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: clamp(14px, 2vw, 16px);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 8vw, 85px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-text {
+    max-width: 800px;
+    font-size: clamp(16px, 3vw, 22px);
+    line-height: 1.8;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ==============================
+   2. LAYOUT & TYPOGRAPHY
+============================== */
+.about-section {
+    padding: clamp(60px, 8vw, 120px) 8%;
+}
+
+.light {
+    background: linear-gradient(135deg, #ffffff, #f4fbf6);
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 80px);
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 50px);
+    color: var(--green);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: var(--gold);
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.section-title p {
+    margin-top: 25px;
+    color: var(--text-light);
+    font-size: clamp(16px, 2vw, 20px);
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+/* ==============================
+   3. STORY & COMMON CARDS
+============================== */
+.story-card {
+    background: var(--card-bg);
+    padding: clamp(30px, 5vw, 60px);
+    border-radius: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-card p {
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 2.2;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.about-grid, .mission-grid, .timeline, .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(20px, 4vw, 40px);
+}
+
+.card, .mission-card, .timeline-item {
+    background: var(--card-bg);
+    padding: clamp(30px, 4vw, 50px);
+    border-radius: 28px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover, .mission-card:hover, .timeline-item:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(21, 148, 71, 0.2);
+}
+
+.card h3, .timeline-item h3 {
+    color: var(--green);
+    font-size: clamp(20px, 3vw, 26px);
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card p, .timeline-item p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* ==============================
+   4. FOUNDER SECTION
+============================== */
+.about-founder {
+    padding: clamp(60px, 8vw, 120px) 8%;
+    background: var(--card-bg);
+}
+
+.founder-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(30px, 5vw, 70px);
+    padding: clamp(30px, 5vw, 70px);
+    border-radius: 40px;
+    background: var(--card-bg);
+    box-shadow: var(--shadow-hover);
+    border: 1px solid rgba(0,0,0,0.04);
+    align-items: center;
+}
+
+.founder-image {
+    flex-shrink: 0;
+    width: clamp(200px, 20vw, 280px);
+    height: clamp(200px, 20vw, 280px);
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--light-green));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(80px, 10vw, 120px);
+    box-shadow: 0 25px 50px rgba(7, 92, 50, 0.3);
+    margin: 0 auto; /* Centers on mobile */
+    border: 8px solid white;
+}
+
+.founder-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.founder-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 45px);
+    color: var(--green);
+}
+
+.designation {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #f6d365);
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 40px;
+    margin: 15px 0 25px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+.founder-content p {
+    color: var(--text-light);
+    line-height: 2;
+    font-size: clamp(16px, 2vw, 18px);
+}
+
+/* ==============================
+   5. ICONS & STATS
+============================== */
+.icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(7,92,50,0.1), rgba(21,148,71,0.1));
+    color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    margin-bottom: 25px;
+    transition: 0.4s;
+}
+
+.card:hover .icon {
+    background: linear-gradient(135deg, var(--green), var(--light-green));
+    color: white;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--green), var(--light-green));
+    color: white;
+    text-align: center;
+    padding: clamp(30px, 5vw, 50px);
+    border-radius: 30px;
+    box-shadow: 0 25px 60px rgba(7, 92, 50, 0.25);
+    transition: 0.4s;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, var(--light-green), var(--green));
+}
+
+.stat-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 6vw, 65px);
+    margin-bottom: 10px;
+}
+
+/* ==============================
+   6. FAQ
+============================== */
+.faq-box {
+    background: var(--card-bg);
+    padding: clamp(25px, 4vw, 40px);
+    border-radius: 25px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--green);
+    transition: 0.3s;
+}
+
+.faq-box:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.faq-box h3 {
+    color: var(--text-dark);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.faq-box p {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* ==============================
+   7. CTA SECTION
+============================== */
+.contact-cta {
+    background: linear-gradient(135deg, #054023, var(--green));
+    color: white;
+    text-align: center;
+    padding: clamp(70px, 10vw, 120px) 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 6vw, 55px);
+    margin-bottom: 20px;
+}
+
+.contact-cta p {
+    font-size: clamp(16px, 3vw, 22px);
+    margin: 0 auto 40px;
+    max-width: 700px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows buttons to stack on very small screens */
+}
+
+.cta-buttons a {
+    padding: 16px 40px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-buttons a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+
+
+/* ==============================
+   8. ANIMATIONS
+============================== */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ==============================
+   9. EXTRA RESPONSIVE TWEAKS 
+   (Most sizing is already handled by clamp() above)
+============================== */
+@media (max-width: 768px) {
+    .founder-content {
+        text-align: center;
+    }
+    
+    .founder-image {
+        margin: 0 auto;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .cta-buttons a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-tag {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+    
+    .icon {
+        margin: 0 auto 20px; /* Centers icon on small phones */
+    }
+    
+    .card, .mission-card, .timeline-item {
+        align-items: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,111 @@
+:root {
+
+
+/* =====================
+   PREMIUM COCONUT BRAND
+===================== */
+
+
+/* Primary Green */
+
+--primary:#245A32;
+
+--primary-dark:#163D22;
+
+--primary-light:#4F8A52;
+
+
+
+/* Natural Colors */
+
+--leaf-green:#6B9B37;
+
+--coconut-white:#FFFDF7;
+
+--shell-brown:#8A5A3B;
+
+--sand:#EAD9B7;
+
+
+
+/* Luxury Accent */
+
+--gold:#C9A227;
+
+--gold-light:#E7C873;
+
+
+
+/* Background */
+
+--bg:#FFFDF7;
+
+--bg-soft:#F7F3E8;
+
+--bg-green:#EEF6E8;
+
+
+
+/* Card */
+
+--card:#FFFFFF;
+
+--card-glass:
+rgba(255,255,255,0.72);
+
+
+
+/* Text */
+
+--text:#17251B;
+
+--text-light:#6B746D;
+
+--heading:#12351F;
+
+
+
+/* Border */
+
+--border:
+rgba(36,90,50,0.12);
+
+
+
+/* Premium Shadows */
+
+--shadow:
+
+0 20px 50px
+rgba(22,61,34,0.12);
+
+
+
+--shadow-hover:
+
+0 30px 70px
+rgba(22,61,34,0.20);
+
+
+
+/* Rounded */
+
+--radius:24px;
+
+--radius-sm:14px;
+
+
+
+/* Animation */
+
+--transition:
+all .35s ease;
+
+
+
+/* Layout */
+
+--container:1450px;
+
+
+}

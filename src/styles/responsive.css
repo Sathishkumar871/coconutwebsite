@@ -1,0 +1,172 @@
+/* ===================================
+   PREMIUM FLUID RESPONSIVE SYSTEM
+   Coconut Business Website
+=================================== */
+
+
+/* Extra Large Screens */
+
+@media(min-width:1600px){
+
+    .container{
+
+        max-width:1700px;
+
+    }
+
+
+}
+
+
+/* Desktop / Laptop */
+
+@media(max-width:1400px){
+
+    .container{
+
+        max-width:100%;
+
+    }
+
+
+    section{
+
+        padding-inline:5%;
+
+    }
+
+}
+
+
+
+/* Laptop */
+
+@media(max-width:1200px){
+
+
+    section{
+
+        padding-top:clamp(60px,6vw,90px);
+
+        padding-bottom:clamp(60px,6vw,90px);
+
+    }
+
+
+    .container{
+
+        padding-inline:25px;
+
+    }
+
+
+}
+
+
+
+/* Tablet Landscape */
+
+@media(max-width:992px){
+
+
+    .container{
+
+        padding-inline:20px;
+
+    }
+
+
+    .grid{
+
+        grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    }
+
+
+}
+
+
+
+/* Tablet Portrait */
+
+@media(max-width:768px){
+
+
+    section{
+
+        padding-inline:20px;
+
+    }
+
+
+    .container{
+
+        padding-inline:15px;
+
+    }
+
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:480px){
+
+
+    section{
+
+        padding:
+
+        clamp(35px,8vw,50px)
+
+        15px;
+
+    }
+
+
+
+    h1{
+
+        font-size:clamp(1.8rem,8vw,2.5rem);
+
+    }
+
+
+
+    h2{
+
+        font-size:clamp(1.4rem,6vw,2rem);
+
+    }
+
+
+
+}
+
+
+
+/* Small Mobile */
+
+@media(max-width:360px){
+
+
+    section{
+
+        padding:35px 12px;
+
+    }
+
+
+
+}

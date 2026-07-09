@@ -1,0 +1,44 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery-card {
+  border-radius: 15px;
+  overflow: hidden;
+  height: 250px;
+  /* క్లిక్ ఆప్షన్ లేదు కాబట్టి, ఇది కేవలం ఇమేజ్ హోల్డర్ */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* ఫోటోలపై చిన్న జూమ్ ఎఫెక్ట్ - ఇది బాగుంటుంది */
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.view-more-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 40px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-more-btn:hover {
+  background: #219150;
+  transform: translateY(-2px);
+}

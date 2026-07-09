@@ -1,0 +1,131 @@
+/* ==============================
+   PREMIUM LUXURY SCROLLING BANNER
+============================== */
+.offer-banner {
+  background: linear-gradient(135deg, #021a0e 0%, #075c32 50%, #021a0e 100%);
+  color: #ffffff;
+  padding: 12px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, transparent 0%, #d4af37 50%, transparent 100%) 1;
+}
+
+/* ==============================
+   🥥 RUNNING COCONUT ANIMATION
+============================== */
+.running-coconut {
+  position: absolute;
+  left: 25px; /* లెఫ్ట్ సైడ్ ఎడ్జ్ లో ఉంచడానికి */
+  top: 50%;
+  margin-top: -15px; /* సెంటర్ చేయడానికి */
+  font-size: 28px;
+  z-index: 110; /* టెక్స్ట్ పై నుంచి కనబడటానికి */
+  
+  /* పైకి కిందకి ఎగిరే యానిమేషన్ (Bounce) */
+  animation: coconutBounce 0.4s infinite alternate ease-in-out;
+  filter: drop-shadow(3px 5px 6px rgba(0,0,0,0.6));
+}
+
+.coconut-icon {
+  display: inline-block;
+  /* గుండ్రంగా తిరిగే యానిమేషన్ (Spin) */
+  animation: coconutSpin 1.2s infinite linear;
+}
+
+@keyframes coconutBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); } /* 8px పైకి ఎగురుతుంది */
+}
+
+@keyframes coconutSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } /* పూర్తి రౌండ్ తిరుగుతుంది */
+}
+
+/* ==============================
+   SCROLLING TEXT WRAPPER
+============================== */
+.ticker-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  
+  /* టెక్స్ట్ కొబ్బరికాయ వెనకాలకి వెళ్లేటప్పుడు స్మూత్ గా ఫేడ్ అవ్వడానికి */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scrollTicker 40s linear infinite;
+  will-change: transform;
+}
+
+.ticker-wrapper:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.offer-text {
+  padding: 0 15px;
+}
+
+.separator {
+  color: #d4af37;
+  margin: 0 25px;
+  font-size: 16px;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.7);
+  animation: pulseGold 2.5s ease-in-out infinite;
+}
+
+/* ==============================
+   SMOOTH ANIMATIONS
+============================== */
+@keyframes scrollTicker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { opacity: 0.6; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* ==============================
+   RESPONSIVE (MOBILES & TABLETS)
+============================== */
+@media (max-width: 768px) {
+  .offer-banner { padding: 10px 0; }
+  
+  /* మొబైల్ లో కొబ్బరికాయ సైజ్ అడ్జస్ట్మెంట్ */
+  .running-coconut {
+    left: 15px;
+    font-size: 24px;
+    margin-top: -12px;
+  }
+  
+  .ticker-item { font-size: 13px; letter-spacing: 0.5px; }
+  .separator { margin: 0 15px; font-size: 14px; }
+  .ticker-track { animation-duration: 30s; }
+}
+
+@media (max-width: 480px) {
+  .offer-banner { padding: 8px 0; }
+  .ticker-item { font-size: 12.5px; }
+}
