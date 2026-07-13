@@ -16,7 +16,7 @@ export const productData = [
     varieties: [
       { grade: "Large", price: "₹22", description: "Best for festivals.", image: "/images/semi-large.png" },
       { grade: "Medium", price: "₹17", description: "Best for daily use.", image: "/images/semi-medium.png" },
-       { grade: "small", price: "₹9", description: "Best for retailers use.", image: "/images/semi-medium.png" }
+       { grade: "small", price: "₹9", description: "Best for retailers use.", image: "/images/semi-small.png" }
     ]
   },
   {
@@ -45,7 +45,7 @@ export const productData = [
       { grade: "Amrutapani", price: "₹70/doz", description: "Sweet and delicious.", image: "/images/banana-amrutapani.png" },
       { grade: "Chakkarakeli", price: "₹90/doz", description: "Rich taste, local favorite.", image: "/images/banana-chakkarakeli.png" },
       { grade: "Karpuram", price: "₹50/doz", description: "Small, fragrant, and sweet.", image: "/images/banana-karpuram.png" },
-      { grade: "Bontha", price: "₹60/doz", description: "Best for chips/curries.", image: "/images/banana-bontha.png" }
+      { grade: "green", price: "₹60/doz", description: "Best for chips/curries.", image: "/images/banana-bontha.png" }
     ]
   },
   {
