@@ -6,7 +6,10 @@ import Products from "../pages/Products";
 import Categories from "../pages/Categories";
 import Gallery from "../pages/Gallery";
 import Contact from "../pages/Contact";
-import ProductDetails from "../pages/ProductDetails"; // 1. దీన్ని ఇంపోర్ట్ చేయండి
+import ProductDetails from "../pages/ProductDetails";
+
+// 👇 Import ChatBot
+import ChatBot from "../components/chatbot/ChatBot";
 
 function AppRoutes() {
   return (
@@ -18,10 +21,11 @@ function AppRoutes() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
-        
-        {/* 2. కొత్తగా ఈ రూట్ యాడ్ చేయండి */}
         <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
+
+      {/* 👇 AI ChatBot - అన్ని pages లో కనిపిస్తుంది */}
+      <ChatBot />
     </BrowserRouter>
   );
 }

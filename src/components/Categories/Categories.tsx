@@ -1,7 +1,7 @@
 import "./Categories.css";
-import { Link } from "react-router-dom"; // 1. దీన్ని తప్పనిసరిగా ఇంపోర్ట్ చేయండి
+import { Link } from "react-router-dom"; 
 
-// మీ ఇంపోర్ట్స్ అలాగే ఉంచండి...
+
 import tenderImg from "../../assets/images/tender.png";
 import semiImg from "../../assets/images/semi.png";
 import oilImg from "../../assets/images/oil.png";
@@ -11,7 +11,6 @@ import lemonImg from "../../assets/images/lemon.png";
 import gingerImg from "../../assets/images/ginger.png";
 import mirchiImg from "../../assets/images/mirchi.png";
 import kajuImg from "../../assets/images/kaju.png";
-
 const categories = [
   { id: 1, title: "Tender Coconut", image: tenderImg },
   { id: 2, title: "Semi Husked", image: semiImg },
@@ -23,7 +22,6 @@ const categories = [
   { id: 8, title: "Green Chilli", image: mirchiImg },
   { id: 9, title: "Cashew (Kaju)", image: kajuImg },
 ];
-
 function Categories() {
   return (
     <section className="categories">
@@ -35,7 +33,6 @@ function Categories() {
         
         <div className="categories-grid">
           {categories.map((item) => (
-            // 2. ఇక్కడ <div> బదులు <Link> వాడండి, ఇది క్లిక్ చేసినప్పుడు పేజీకి తీసుకెళ్తుంది
             <Link to={`/product/${item.id}`} className="category-card" key={item.id}>
               <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
@@ -46,5 +43,4 @@ function Categories() {
     </section>
   );
 }
-
 export default Categories;

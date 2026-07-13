@@ -23,7 +23,13 @@ function ProductDetails() {
               <h3>{v.grade}</h3>
               <p className="price">{v.price}</p>
               <p>{v.description}</p>
-              <button className="btn-enquire">Enquire Now</button>
+              
+              {/* కేవలం ఒకే ఒక Order Now బటన్ - క్లిక్ చేస్తే డైరెక్ట్ కాల్ వెళ్తుంది */}
+              <a href="tel:9553679915" className="btn-order-link" style={{ textDecoration: 'none', display: 'block', marginTop: '10px' }}>
+                <button className="btn-enquire" style={{ width: '100%', cursor: 'pointer' }}>
+                  Order Now
+                </button>
+              </a>
             </div>
           ))
         ) : (

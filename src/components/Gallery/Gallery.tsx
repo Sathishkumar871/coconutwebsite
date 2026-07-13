@@ -8,6 +8,15 @@ const allImages = [
   "/images/gallery/gallery7.jpg", "/images/gallery/gallery8.jpg",
   "/images/gallery/gallery9.jpg", "/images/gallery/gallery10.jpg",
   "/images/gallery/gallery11.jpg", "/images/gallery/gallery12.jpg",
+   "/images/gallery/gallery13.jpg", "/images/gallery/gallery14.jpg",
+    "/images/gallery/gallery15.jpg", "/images/gallery/gallery16.jpg",
+     "/images/gallery/gallery17.jpg", "/images/gallery/gallery18.jpg",
+      "/images/gallery/gallery19.jpg", "/images/gallery/gallery20.jpg",
+       "/images/gallery/gallery21.jpg", "/images/gallery/gallery22.jpg",
+        "/images/gallery/gallery23.jpg", "/images/gallery/gallery24.jpg",
+         "/images/gallery/gallery25.jpg", "/images/gallery/gallery26.jpg",
+          "/images/gallery/gallery27.jpg", "/images/gallery/gallery28.jpg",
+           "/images/gallery/gallery29.jpg", "/images/gallery/gallery30.jpg",
 ];
 
 function Gallery() {

@@ -203,140 +203,229 @@
 
 /* ===============================
    PREMIUM FOUNDER IMAGE
-================================ */
-.founder-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+/* =======================================
+   ABOUT FOUNDER - MASTER PREMIUM DESIGN
+======================================= */
+.about-founder {
+  background: radial-gradient(circle at 0% 100%, #f4fdf7 0%, #ffffff 70%);
+  padding: 120px 8%;
+  position: relative;
+  overflow: hidden;
 }
 
+/* బ్యాక్‌గ్రౌండ్ లగ్జరీ ఆర్ట్ లైన్స్ */
+.about-founder::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px dashed rgba(11, 140, 71, 0.08);
+  pointer-events: none;
+}
+
+.founder-wrapper {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* =======================================
+   FOUNDER IMAGE (GOLDEN GRADIENT ORBIT)
+======================================= */
+.founder-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* బ్యాక్‌గ్రౌండ్ సాఫ్ట్ నియాన్ పల్స్ గ్లో */
 .founder-image::before {
-    content: "";
-    position: absolute;
-    width: 390px;
-    height: 390px;
-    border-radius: 50%;
-    background: radial-gradient(circle,
-        rgba(255,255,255,.18),
-        rgba(255,255,255,0) 70%);
-    filter: blur(15px);
-    animation: glow 4s ease-in-out infinite;
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(11, 140, 71, 0.1) 0%, rgba(212, 175, 55, 0.04) 50%, transparent 70%);
+  filter: blur(20px);
+  animation: premiumPulse 5s ease-in-out infinite;
+}
+
+/* తిరిగే లగ్జరీ గోల్డ్ ఆర్బిట్ లైన్ */
+.founder-image::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  border-top: 1.5px solid rgba(212, 175, 55, 0.4);
+  border-bottom: 1.5px solid rgba(11, 140, 71, 0.2);
+  animation: rotateOrbit 30s linear infinite;
+  z-index: 1;
 }
 
 .founder-image img {
-    width: 340px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 50%;
-
-    /* Glass Effect */
-    padding: 8px;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    /* Glass Border */
-    border: 1.5px solid rgba(255,255,255,.28);
-
-    position: relative;
-    z-index: 5;
-    transition: .6s ease;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.18),
-        inset 0 1px 1px rgba(255,255,255,.35),
-        inset 0 -8px 20px rgba(255,255,255,.05);
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 5;
+  padding: 10px;
+  background: #ffffff;
+  
+  /* ప్రెసిషన్ గోల్డ్ అండ్ ఎమరాల్డ్ బోర్డర్ */
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    0 30px 70px rgba(4, 56, 30, 0.12),
+    inset 0 0 15px rgba(11, 140, 71, 0.05);
+  
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-.founder-image img:hover {
-    transform: scale(1.06);
-
-    box-shadow:
-        0 35px 70px rgba(0,0,0,.22),
-        inset 0 1px 2px rgba(255,255,255,.45);
+/* హోవర్ ఎఫెక్ట్ */
+.founder-image:hover img {
+  transform: scale(1.03) translateY(-6px);
+  border-color: #27ae60;
+  box-shadow: 
+    0 45px 85px rgba(4, 56, 30, 0.18),
+    inset 0 0 20px rgba(212, 175, 55, 0.1);
 }
 
-/* Glass Ring */
-.founder-image::after {
-    content: "";
-    position: absolute;
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,.18);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    animation: rotateRing 25s linear infinite;
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-@keyframes rotateRing {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+@keyframes premiumPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
 }
 
-@keyframes glow {
-    0% {
-        transform: scale(1);
-        opacity: .6;
-    }
-    50% {
-        transform: scale(1.06);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: .6;
-    }
+/* =======================================
+   FOUNDER CONTENT CARD (HIGH LUXURY)
+======================================= */
+.founder-content {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 32px;
+  /* సాఫ్ట్ బ్రాండెడ్ బోర్డర్ */
+  border: 1px solid rgba(11, 140, 71, 0.06);
+  box-shadow: 0 30px 70px rgba(4, 56, 30, 0.03);
 }
 
-.founder-content{
-    display:flex;
-    flex-direction:column;
+.designation {
+  display: inline-block;
+  width: max-content;
+  padding: 6px 16px;
+  background: rgba(11, 140, 71, 0.06);
+  color: #0b8c47;
+  border: 1px solid rgba(11, 140, 71, 0.15);
+  border-radius: 50px;
+  font-size: .75rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
-.designation{
-    display:inline-block;
-    width:max-content;
-    padding:8px 18px;
-    background:#0b8c47;
-    color:#fff;
-    border-radius:30px;
-    font-size:.9rem;
-    margin-bottom:18px;
-    font-weight:600;
+/* పేరుకి ప్రీమియం లగ్జరీ గోల్డ్/గ్రీన్ టచ్ */
+.founder-content h2 {
+  font-size: 3.4rem;
+  color: #04381e;
+  margin-bottom: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
-.founder-content h2{
-    font-size:2.7rem;
-    color:#04381e;
-    margin-bottom:25px;
+/* ఫౌండర్ పేరులో మొదటి అక్షరాలకు లేదా లాస్ట్ నేమ్‌కి గోల్డ్ కలర్ ఇవ్వడానికి */
+.founder-content h2 span {
+  background: linear-gradient(135deg, #0b8c47 0%, #d4af37 100%);
+ 
+  -webkit-text-fill-color: transparent;
 }
 
-.founder-content p{
-    font-size:1.05rem;
-    color:#555;
-    line-height:2;
-    margin-bottom:18px;
+.founder-content p {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.9;
+  margin-bottom: 15px;
 }
 
-.founder-content blockquote{
-    background:#f6fff8;
-    border-left:6px solid #0b8c47;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:30px;
-    font-size:1.15rem;
-    line-height:1.9;
-    color:#04381e;
-    font-style:italic;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+/* కస్టమ్ కోట్ సెక్షన్ (ఇమేజ్‌లో ఉన్న గ్రీన్ బాక్స్ కి అప్‌గ్రేడ్) */
+.founder-content blockquote {
+  position: relative;
+  background: linear-gradient(145deg, #f7fdf9 0%, #ffffff 100%);
+  border: 1px solid rgba(11, 140, 71, 0.08);
+  border-left: 4px solid #0b8c47;
+  padding: 35px 35px 35px 55px;
+  border-radius: 8px 24px 24px 8px;
+  margin: 15px 0 25px 0;
+  font-size: 1.18rem;
+  line-height: 1.85;
+  color: #04381e;
+  font-style: italic;
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.8);
 }
 
+/* లగ్జరీ వాటర్‌మార్క్ కోటేషన్ మార్క్ */
+.founder-content blockquote::before {
+  content: "“";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 5.5rem;
+  color: rgba(11, 140, 71, 0.07);
+  font-family: serif;
+  line-height: 1;
+}
+
+/* =======================================
+   RESPONSIVE (LAPTOP, TAB & MOBILE)
+======================================= */
+@media (max-width: 1200px) {
+  .about-founder { padding: 100px 5%; }
+  .founder-wrapper { grid-template-columns: 380px 1fr; gap: 40px; }
+  .founder-image img { width: 310px; height: 310px; }
+  .founder-image::after { width: 350px; height: 350px; }
+  .founder-image::before { width: 390px; height: 390px; }
+  .founder-content { padding: 35px; }
+  .founder-content h2 { font-size: 2.8rem; }
+}
+
+@media (max-width: 900px) {
+  .about-founder::before { display: none; }
+  .founder-wrapper { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+  .designation { margin: 0 auto 20px auto; }
+  .founder-content { background: transparent; padding: 0; border: none; box-shadow: none; }
+  .founder-content blockquote { padding: 30px 25px 30px 40px; border-radius: 16px; }
+  .founder-content blockquote::before { left: 10px; top: 0px; }
+}
+
+@media (max-width: 480px) {
+  .about-founder { padding: 80px 20px; }
+  .founder-image img { width: 260px; height: 260px; padding: 8px; }
+  .founder-image::before { width: 300px; height: 300px; }
+  .founder-image::after { width: 285px; height: 285px; }
+  .founder-content h2 { font-size: 2.2rem; }
+  .founder-content p { font-size: 0.98rem; line-height: 1.8; }
+  .founder-content blockquote { font-size: 1.05rem; padding: 25px 20px 25px 35px; }
+}
 /* ==========================================
    VALUES SECTION
 ========================================== */

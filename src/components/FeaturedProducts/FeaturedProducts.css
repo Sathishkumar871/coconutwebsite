@@ -1,344 +1,384 @@
 /* ==============================
-   FEATURED PRODUCTS SECTION
+FEATURED PRODUCTS SECTION
 ============================== */
 .featured-products {
-  padding: 80px 8%;
-  background: linear-gradient(135deg, #ffffff, #f4fbf6);
-  font-family: 'Poppins', sans-serif;
+padding: 80px 8%;
+background: linear-gradient(135deg, #fefeff, #f6fcf8); /* Slightly adjusted for better premium clarity */
+font-family: 'Poppins', sans-serif;
 }
 
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
+max-width: 1400px;
+margin: 0 auto;
 }
 
 /* ==============================
-   LANGUAGE SWITCHER
+LANGUAGE SWITCHER
 ============================== */
 .lang-switcher {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 10px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+margin-bottom: 25px; /* Increased margin for better spacing */
+gap: 10px;
 }
 
 .lang-switcher label {
-  font-weight: 600;
-  color: #555;
-  font-size: 16px;
+font-weight: 600;
+color: #555;
+font-size: 16px;
 }
 
 .lang-switcher select {
-  padding: 8px 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  color: #333;
-  cursor: pointer;
-  outline: none;
-  font-family: inherit;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+padding: 10px 18px; /* Increased padding */
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 50px; /* Fully rounded premium look */
+background: rgba(255, 255, 255, 0.8);
+backdrop-filter: blur(8px); /* Enhanced glass effect */
+font-size: 15px;
+font-weight: 500;
+color: #333;
+cursor: pointer;
+outline: none;
+font-family: inherit;
+transition: 0.3s ease;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04); /* Subtle shadow for depth */
 }
 
 .lang-switcher select:hover,
 .lang-switcher select:focus {
-  border-color: #075c32; /* Primary Green */
-  box-shadow: 0 4px 10px rgba(7, 92, 50, 0.15);
+border-color: #159447;
+box-shadow: 0 4px 12px rgba(21, 148, 71, 0.2); /* Enhanced focus shadow */
 }
 
 /* ==============================
-   SECTION TITLE
+SECTION TITLE
 ============================== */
 .section-title {
-  text-align: center;
-  margin-bottom: 50px;
+text-align: center;
+margin-bottom: 60px; /* Increased spacing */
 }
 
 .section-title span {
-  display: inline-block;
-  color: #159447;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  font-size: 14px;
+display: inline-block;
+color: #159447;
+font-weight: 700; /* Increased weight */
+letter-spacing: 2px;
+text-transform: uppercase;
+margin-bottom: 12px;
+font-size: 14px;
 }
 
 .section-title h2 {
-  font-size: clamp(30px, 5vw, 45px);
-  color: #075c32;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-family: 'Playfair Display', serif;
+font-size: clamp(32px, 5vw, 48px); /* Slightly increased size */
+color: #075c32;
+font-weight: 700;
+margin-bottom: 20px;
+font-family: 'Playfair Display', serif;
 }
 
 .section-title p {
-  color: #666;
-  font-size: clamp(16px, 2vw, 18px);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.8;
+color: #666;
+font-size: clamp(17px, 2vw, 19px); /* Slightly increased size */
+max-width: 650px; /* Slightly wider max-width */
+margin: 0 auto;
+line-height: 1.9; /* Increased line-height */
 }
 
 /* ==============================
-   PRODUCTS GRID & CARDS
+PRODUCTS GRID & CARDS
 ============================== */
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width for larger cards */
+gap: 35px; /* Increased spacing */
 }
 
 .product-card {
-  background: #ffffff;
-  padding: 30px 20px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+background: rgba(255, 255, 255, 0.5); /* Semi-transparent background for glassy effect */
+backdrop-filter: blur(10px); /* Blurs background elements for glass effect */
+-webkit-backdrop-filter: blur(10px); /* For Safari support */
+padding: 35px 25px; /* Increased padding */
+border-radius: 25px; /* Fully rounded premium look */
+text-align: center;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); /* Soft shadow for elevation and depth */
+border: 1px solid rgba(255, 255, 255, 0.4); /* Subtle light border for glass definition */
+transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth premium ease */
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+overflow: hidden; /* Important for keeping image within curved card boundaries */
 }
 
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-  border-color: rgba(21, 148, 71, 0.2);
+transform: translateY(-12px); /* Slightly increased hover lift */
+box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+border-color: rgba(21, 148, 71, 0.2); /* Fades in subtle green border on hover */
 }
 
 .product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  transition: transform 0.4s ease;
+width: 100%;
+height: 220px; /* Slightly increased height */
+object-fit: cover; /* Changed to cover for better image-to-curve fitting */
+border-radius: 20px; /* Fully rounded premium look for the image itself */
+margin-bottom: 25px; /* Increased margin */
+transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Matching smooth premium ease */
 }
 
 .product-card:hover img {
-  transform: scale(1.05);
+transform: scale(1.08); /* Slightly increased zoom effect */
 }
 
 .product-card h3 {
-  color: #333;
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: 600;
+color: #333;
+font-size: 22px; /* Slightly increased size */
+margin-bottom: 12px;
+font-weight: 600;
 }
 
 .product-card .price {
-  color: #ff9800; /* Premium Orange/Gold */
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
+color: #ff9800; /* Rich orange/gold for premium feel */
+font-size: 24px; /* Slightly increased size */
+font-weight: 700;
+margin-bottom: 25px; /* Increased margin */
 }
 
 .view-btn {
-  background: transparent;
-  color: #075c32;
-  border: 2px solid #075c32;
-  padding: 10px 25px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
+background: rgba(7, 92, 50, 0.1); /* Semi-transparent base for glass button */
+color: #075c32;
+border: 2px solid rgba(7, 92, 50, 0.4); /* Thinner, lighter border for glass effect */
+backdrop-filter: blur(5px); /* Blurs background behind the button */
+-webkit-backdrop-filter: blur(5px); /* Safari support */
+padding: 12px 30px; /* Increased padding for better feel */
+font-size: 16px; /* Slightly increased size */
+font-weight: 600;
+border-radius: 50px; /* Fully rounded premium look */
+cursor: pointer;
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Matching smooth ease */
+width: 100%;
+box-shadow: 0 4px 8px rgba(7, 92, 50, 0.1); /* Subtle shadow for initial lift */
 }
 
 .view-btn:hover {
-  background: #075c32;
-  color: #ffffff;
+background: linear-gradient(135deg, #075c32, #159447); /* Premium gradient on hover */
+color: #ffffff;
+border-color: transparent; /* Makes border disappear into the gradient fill */
+box-shadow: 0 10px 20px rgba(7, 92, 50, 0.3); /* Stronger shadow on hover */
+transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* ==============================
-   MODAL / POPUP STYLES
+MODAL / POPUP STYLES
 ============================== */
 .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 20px;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5); /* Slightly darker backdrop for better modal focus */
+backdrop-filter: blur(8px); /* Enhanced blur effect on background elements */
+-webkit-backdrop-filter: blur(8px); /* Safari support */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+padding: 20px;
 }
 
 .modal-content {
-  background: #fff;
-  width: 100%;
-  max-width: 850px;
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-  animation: modalFadeIn 0.3s ease-out forwards;
+background: rgba(255, 255, 255, 0.7); /* Semi-transparent for glassy modal */
+backdrop-filter: blur(15px); /* Stronger blur for greater glass definition */
+-webkit-backdrop-filter: blur(15px); /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle white border for clarity */
+width: 100%;
+max-width: 900px; /* Slightly wider max-width */
+border-radius: 30px; /* Fully rounded premium look */
+padding: 50px; /* Increased padding for spacious feel */
+position: relative;
+box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2); /* Enhanced shadow for deep elevation */
+animation: modalFadeIn 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; /* Matching premium ease */
 }
 
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: translateY(30px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+from { opacity: 0; transform: translateY(30px) scale(0.97); }
+to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .close-btn {
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  background: none;
-  border: none;
-  font-size: 35px;
-  cursor: pointer;
-  color: #555;
-  transition: 0.3s;
-  line-height: 1;
+position: absolute;
+top: 20px;
+right: 30px;
+background: none;
+border: none;
+font-size: 38px; /* Slightly larger size */
+cursor: pointer;
+color: #555;
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Matching ease */
+line-height: 1;
 }
 
 .close-btn:hover {
-  color: #ff0000;
-  transform: scale(1.1);
+color: #ff4444; /* Brighter red on hover */
+transform: scale(1.15); /* Slightly increased scale effect */
 }
 
 .modal-body {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: center;
+display: grid;
+grid-template-columns: 1fr 1.3fr; /* Slightly wider detail column */
+gap: 50px; /* Increased spacing */
+align-items: center;
 }
 
 .modal-image {
-  background: #f8f9fa;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #eee;
+background: rgba(255, 255, 255, 0.4); /* Glassy background for image section */
+border-radius: 20px; /* Rounded look to match rest of design */
+padding: 25px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1px solid rgba(0, 0, 0, 0.03); /* Subtle light border */
 }
 
 .modal-image img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: contain;
+width: 100%;
+max-height: 350px; /* Slightly increased height */
+object-fit: contain;
+border-radius: 15px; /* Matches slightly less curved interior of section */
 }
 
 .modal-details h2 {
-  color: #075c32; /* Primary Green */
-  font-size: clamp(24px, 3vw, 32px);
-  margin-bottom: 5px;
+color: #075c32;
+font-size: clamp(26px, 3vw, 36px); /* Slightly increased size range */
+margin-bottom: 7px;
+font-family: 'Playfair Display', serif; /* Consistent elegant serif */
 }
 
 .modal-price {
-  font-size: 26px;
-  color: #ff9800;
-  margin-bottom: 25px;
-  font-weight: 700;
+font-size: 30px; /* Slightly increased size */
+color: #ff9800;
+margin-bottom: 30px; /* Increased spacing */
+font-weight: 700;
 }
 
 .info-group {
-  margin-bottom: 15px;
-  background: #f9fdfa;
-  padding: 12px 15px;
-  border-radius: 10px;
-  border-left: 4px solid #159447;
+margin-bottom: 20px; /* Increased margin */
+background: rgba(21, 148, 71, 0.03); /* Extremely subtle green tint for glassy info blocks */
+padding: 15px 18px; /* Slightly increased padding */
+border-radius: 12px; /* Matches curve of info block container */
+border-left: 5px solid #159447; /* Slightly thicker border for focus */
 }
 
 .info-group strong {
-  display: block;
-  color: #333;
-  margin-bottom: 5px;
-  font-size: 16px;
+display: block;
+color: #333;
+margin-bottom: 7px;
+font-size: 17px;
 }
 
 .info-group p {
-  color: #555;
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0;
+color: #555;
+font-size: 16px;
+line-height: 1.7;
+margin: 0;
 }
 
 .order-btn {
-  background: linear-gradient(135deg, #075c32, #159447);
-  color: #fff;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 15px;
-  width: 100%;
-  transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(7, 92, 50, 0.2);
+background: linear-gradient(135deg, #075c32, #159447); /* Consistent premium gradient */
+color: #fff;
+border: none;
+padding: 18px 35px; /* Increased padding for prominent action */
+font-size: 18px; /* Slightly larger size */
+font-weight: 700; /* Thicker weight for prominence */
+border-radius: 50px; /* Fully rounded premium look */
+cursor: pointer;
+margin-top: 20px; /* Increased spacing */
+width: 100%;
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Matching ease */
+box-shadow: 0 12px 25px rgba(7, 92, 50, 0.3); /* Premium soft shadow */
 }
 
 .order-btn:hover {
-  box-shadow: 0 15px 25px rgba(7, 92, 50, 0.3);
-  transform: translateY(-3px);
+box-shadow: 0 18px 35px rgba(7, 92, 50, 0.45); /* Enhanced shadow on hover */
+transform: translateY(-4px); /* Slightly more prominent lift */
 }
 
 /* ==============================
-   RESPONSIVE DESIGN (MOBILES & TABLETS)
+RESPONSIVE DESIGN (MOBILES & TABLETS)
 ============================== */
 @media (max-width: 992px) {
-  .modal-body {
-    gap: 20px;
-  }
+.modal-body {
+gap: 30px;
+}
 }
 
 @media (max-width: 768px) {
-  .featured-products {
-    padding: 60px 5%;
-  }
+.featured-products {
+padding: 60px 5%;
+}
 
-  .lang-switcher {
-    justify-content: center;
-  }
+.lang-switcher {
+justify-content: center;
+margin-bottom: 20px;
+}
 
-  .modal-body {
-    grid-template-columns: 1fr;
-  }
-  
-  .modal-content {
-    padding: 30px 20px;
-    max-height: 90vh;
-    overflow-y: auto; /* Adds scroll if content is too long on mobile */
-  }
+.modal-body {
+grid-template-columns: 1fr;
+gap: 30px;
+}
 
-  .modal-image {
-    padding: 10px;
-  }
+.modal-content {
+padding: 40px 25px; /* Adjust padding for mobile */
+max-height: 90vh;
+overflow-y: auto; /* Adds scroll if content is too long on mobile */
+border-radius: 25px; /* Slightly adjust curve for mobile aspect ratio */
+}
 
-  .modal-image img {
-    max-height: 220px;
-  }
+.modal-image {
+padding: 15px;
+}
 
-  .info-group {
-    padding: 10px;
-  }
+.modal-image img {
+max-height: 250px; /* Adjust image size for smaller screen */
+}
+
+.close-btn {
+top: 15px;
+right: 20px;
+font-size: 34px;
+}
+
+.modal-price {
+font-size: 26px; /* Adjust price size for mobile */
+margin-bottom: 25px;
+}
+
+.order-btn {
+padding: 16px 30px; /* Adjust button size for mobile */
+font-size: 17px;
+}
 }
 
 @media (max-width: 480px) {
-  .product-card {
-    padding: 25px 15px;
-  }
+.product-card {
+padding: 30px 20px; /* Adjust card padding for small mobiles */
+border-radius: 20px; /* Adjust curve for small screens */
+}
 
-  .product-card img {
-    height: 160px;
-  }
+.product-card img {
+height: 180px; /* Adjust image height */
+}
 
-  .close-btn {
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-  }
+.product-card h3 {
+font-size: 20px; /* Adjust title size */
+}
+
+.product-card .price {
+font-size: 22px; /* Adjust price size */
+}
+
+.view-btn {
+padding: 10px 25px; /* Adjust button size */
+font-size: 15px;
+}
 }

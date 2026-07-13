@@ -4,9 +4,9 @@ export const productData = [
     title: "Tender Coconut",
     description: "100% natural, farm-fresh tender coconuts.",
     varieties: [
-      { grade: "A-Grade", price: "₹38", description: "Large size, extra sweet water.", image: "/images/tender-a.png" },
-      { grade: "B-Grade", price: "₹34", description: "Medium size, standard quality.", image: "/images/tender-b.png" },
-      { grade: "C-Grade", price: "₹28", description: "Small size, budget-friendly.", image: "/images/tender-c.png" }
+      { grade: "A-Grade", price: "₹31", description: "Large size, extra sweet water.", image: "/images/tender-a.png" },
+      { grade: "B-Grade", price: "₹27", description: "Medium size, standard quality.", image: "/images/tender-b.png" },
+      { grade: "C-Grade", price: "₹23", description: "Small size, budget-friendly.", image: "/images/tender-c.png" }
     ]
   },
   {
@@ -14,8 +14,9 @@ export const productData = [
     title: "Semi Husked",
     description: "Premium quality semi-husked coconuts.",
     varieties: [
-      { grade: "Large", price: "₹35", description: "Best for festivals.", image: "/images/semi-large.png" },
-      { grade: "Medium", price: "₹29", description: "Best for daily use.", image: "/images/semi-medium.png" }
+      { grade: "Large", price: "₹22", description: "Best for festivals.", image: "/images/semi-large.png" },
+      { grade: "Medium", price: "₹17", description: "Best for daily use.", image: "/images/semi-medium.png" },
+       { grade: "small", price: "₹9", description: "Best for retailers use.", image: "/images/semi-medium.png" }
     ]
   },
   {
@@ -32,8 +33,8 @@ export const productData = [
     title: "Copra",
     description: "High-quality dried coconut meat.",
     varieties: [
-      { grade: "Edible Grade", price: "₹150/kg", description: "Best for sweets and cooking.", image: "/images/copra-edible.png" },
-      { grade: "Industrial Grade", price: "₹120/kg", description: "For oil extraction and other uses.", image: "/images/copra-ind.png" }
+      { grade: "Edible Grade", price: "₹280/kg", description: "Best for sweets and cooking.", image: "/images/copra-edible.png" },
+      { grade: "Industrial Grade", price: "₹150/kg", description: "For oil extraction and other uses.", image: "/images/copra-ind.png" }
     ]
   },
   {

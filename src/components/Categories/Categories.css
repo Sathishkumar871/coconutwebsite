@@ -1,99 +1,105 @@
+/* ==============================
+   DESKTOP & TAB (LABATAB & TAB OK)
+============================== */
 .categories{
-
-padding:100px 0;
-
-background:#ffffff;
-
+  padding:100px 0;
+  background:#ffffff;
 }
 
 .section-title{
-
-text-align:center;
-
-margin-bottom:60px;
-
+  text-align:center;
+  margin-bottom:60px;
 }
 
 .section-title span{
-
-color:#1B5E20;
-
-font-weight:600;
-
-letter-spacing:2px;
-
+  color:#1B5E20;
+  font-weight:600;
+  letter-spacing:2px;
 }
 
 .section-title h2{
-
-font-size:42px;
-
-margin:15px 0;
-
-color:#222;
-
+  font-size:42px;
+  margin:15px 0;
+  color:#222;
 }
 
 .section-title p{
-
-color:#666;
-
-font-size:18px;
-
+  color:#666;
+  font-size:18px;
 }
 
 .categories-grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-
-gap:30px;
-
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
 }
 
 .category-card{
-
-background:#fff;
-
-border-radius:20px;
-
-padding:30px;
-
-text-align:center;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-transition:.4s;
-
-cursor:pointer;
-
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+  transition:.4s;
+  cursor:pointer;
 }
 
 .category-card:hover{
-
-transform:translateY(-10px);
-
+  transform:translateY(-10px);
 }
 
 .category-card img{
-
-width:130px;
-
-height:130px;
-
-object-fit:contain;
-
-margin:auto;
-
-margin-bottom:20px;
-
+  width:130px;
+  height:130px;
+  object-fit:contain;
+  margin:auto;
+  margin-bottom:20px;
 }
 
 .category-card h3{
+  font-size:22px;
+  color:#1B5E20;
+}
 
-font-size:22px;
+/* ==============================
+   ONLY MOBILE (మొబైల్ సైజ్ మరియు టూ కార్డ్స్ ఫిక్స్)
+============================== */
+@media (max-width: 576px) {
+  .categories {
+    padding: 50px 0; /* మొబైల్ లో టాప్, బాటమ్ స్పేస్ తగ్గించాం */
+  }
 
-color:#1B5E20;
+  .section-title {
+    margin-bottom: 30px; /* టైటిల్ కింద గ్యాప్ తగ్గించాం */
+  }
 
+  .section-title h2 {
+    font-size: 26px; /* మొబైల్ కి తగ్గట్టు పెద్ద టైటిల్ సైజ్ తగ్గించాం */
+  }
+
+  .section-title p {
+    font-size: 14px; /* సబ్-టైటిల్ సైజ్ తగ్గించాం */
+    padding: 0 10px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr); /* ఒకే లైన్ లో రెండు కార్డ్స్ */
+    gap: 15px; /* కార్డ్స్ మధ్య దూరం తగ్గించాం */
+    padding: 0 15px; /* స్క్రీన్ ఇరువైపులా టచ్ అవ్వకుండా స్పేస్ */
+  }
+
+  .category-card {
+    padding: 15px; /* కార్డ్ లోపల ప్యాడింగ్ తగ్గించాం */
+    border-radius: 15px;
+  }
+
+  .category-card img {
+    width: 75px; /* ఇమేజ్ సైజ్ తగ్గించాం (లేదంటే కార్డ్ దాటిపోతుంది) */
+    height: 75px;
+    margin-bottom: 12px;
+  }
+
+  .category-card h3 {
+    font-size: 15px; /* కార్డ్ హెడింగ్ టెక్స్ట్ సైజ్ తగ్గించాం */
+  }
 }

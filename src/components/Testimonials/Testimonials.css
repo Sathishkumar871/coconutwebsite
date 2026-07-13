@@ -1,3 +1,6 @@
+/* ==============================
+   DESKTOP & TAB (LABATAB & TAB OK)
+============================== */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -39,4 +42,48 @@
   border-radius: 30px;
   cursor: pointer;
   font-weight: 600;
+}
+
+/* ==============================
+   ONLY MOBILE (మొబైల్‌లో ఒక లైన్‌కి రెండు రివ్యూ కార్డ్స్)
+============================== */
+@media (max-width: 576px) {
+  .testimonial-grid {
+    /* ఖచ్చితంగా ఒకే లైన్‌లో రెండు రివ్యూలు వచ్చేలా చేస్తుంది */
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 12px !important; /* మొబైల్‌లో కార్డ్స్ మధ్య స్పేస్ తగ్గించాం */
+    padding: 12px;
+  }
+
+  .testimonial-card {
+    padding: 15px !important; /* కార్డ్ లోపల ఖాళీ స్థలాన్ని తగ్గించాం */
+    border-radius: 12px;
+  }
+
+  /* ఒకవేళ రివ్యూ టెక్స్ట్ (p tag) ఉంటే దాని సైజ్ తగ్గించడం కోసం */
+  .testimonial-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4;
+  }
+
+  .stars {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .testimonial-card h4, 
+  .testimonial-card h3 {
+    font-size: 0.95rem !important; /* కస్టమర్ పేరు సైజ్ తగ్గించాం */
+  }
+
+  .location {
+    font-size: 0.75rem !important; /* లొకేషన్ సైజ్ తగ్గించాం */
+    margin-top: 2px;
+  }
+
+  .view-more-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+    margin: 25px auto;
+  }
 }
