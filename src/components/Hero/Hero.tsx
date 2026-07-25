@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           <span className="badge">🌴 Premium products Export</span>
           <h1>Nature’s Gold, <br /><span>Refined for You</span></h1>
           <p>Experience the purity of organic products. Farm-fresh, ethically sourced, and globally certified.</p>
-          <button className="cta-btn">View Products</button>
+          <button className="cta-btn">track order</button>
         </div>
 
         <div className="hero-right">

@@ -1,0 +1,965 @@
+/* ==========================================
+   ULTRA PREMIUM ORDER MODAL
+   GLASS EXPORT STYLE
+========================================== */
+
+
+.order-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:999999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.35)
+    );
+
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+
+    animation:fadeIn .4s ease;
+
+}
+
+
+
+/* =========================
+   GLASS MODAL
+========================= */
+
+
+.order-modal{
+
+    width:100%;
+
+    max-width:560px;
+
+
+    background:
+    rgba(255,255,255,.78);
+
+
+    backdrop-filter:blur(35px);
+
+    -webkit-backdrop-filter:blur(35px);
+
+
+    border-radius:32px;
+
+
+    padding:38px;
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    overflow:hidden;
+
+
+    border:
+
+    1px solid
+    rgba(255,255,255,.65);
+
+
+
+    box-shadow:
+
+
+    0 35px 90px rgba(0,0,0,.25),
+
+    inset 0 1px 1px rgba(255,255,255,.8);
+
+
+
+    animation:
+
+    modalShow .5s cubic-bezier(.16,1,.3,1);
+
+}
+
+
+
+/* glass glow */
+
+
+.order-modal::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:260px;
+
+    height:260px;
+
+
+    top:-120px;
+
+    right:-100px;
+
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(34,197,94,.25),
+
+    transparent 70%
+
+    );
+
+
+
+    filter:blur(20px);
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+.order-modal::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:220px;
+
+    height:220px;
+
+
+
+    bottom:-120px;
+
+    left:-100px;
+
+
+
+
+    background:
+
+
+    radial-gradient(
+
+    circle,
+
+    rgba(234,179,8,.18),
+
+    transparent 70%
+
+    );
+
+
+
+    filter:blur(20px);
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+
+.order-close{
+
+
+    position:absolute;
+
+
+    top:20px;
+
+    right:20px;
+
+
+    width:42px;
+
+    height:42px;
+
+
+
+    border-radius:50%;
+
+
+
+    border:
+
+    1px solid
+    rgba(255,255,255,.5);
+
+
+
+    background:
+
+    rgba(255,255,255,.25);
+
+
+
+    backdrop-filter:blur(15px);
+
+
+
+    color:#14532d;
+
+
+
+    font-size:20px;
+
+
+
+    cursor:pointer;
+
+
+    z-index:5;
+
+
+    transition:.4s;
+
+}
+
+
+
+.order-close:hover{
+
+
+    transform:
+
+    rotate(90deg)
+    scale(1.1);
+
+
+}
+
+
+
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+
+.order-modal h2{
+
+
+    font-size:34px;
+
+
+    text-align:center;
+
+
+
+    color:#064e3b;
+
+
+
+    margin-bottom:8px;
+
+
+    font-weight:800;
+
+}
+
+
+
+
+.subtitle{
+
+
+    text-align:center;
+
+
+    color:#64748b;
+
+
+    margin-bottom:30px;
+
+
+    font-size:15px;
+
+}
+
+
+
+
+
+
+/* =========================
+ INPUTS
+========================= */
+
+
+.field{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+
+    gap:9px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.field label{
+
+
+    font-size:14px;
+
+
+    font-weight:700;
+
+
+
+    color:#166534;
+
+
+}
+
+
+
+.field input,
+.field textarea{
+
+
+    width:100%;
+
+
+    padding:16px 18px;
+
+
+
+    border-radius:18px;
+
+
+
+    border:
+
+    1px solid
+    rgba(22,101,52,.15);
+
+
+
+    background:
+
+    rgba(255,255,255,.65);
+
+
+
+    backdrop-filter:blur(12px);
+
+
+
+    outline:none;
+
+
+    font-size:15px;
+
+
+    color:#14532d;
+
+
+
+    transition:.35s;
+
+}
+
+
+
+.field textarea{
+
+    resize:none;
+
+}
+
+
+
+.field input:focus,
+.field textarea:focus{
+
+
+    background:white;
+
+
+
+    border-color:#16a34a;
+
+
+
+    box-shadow:
+
+
+    0 0 0 5px
+
+    rgba(34,197,94,.12);
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+ PREMIUM BUTTON
+========================= */
+
+
+.continue-btn{
+
+
+    width:100%;
+
+
+    margin-top:15px;
+
+
+
+    padding:17px;
+
+
+
+    border:none;
+
+
+
+    border-radius:20px;
+
+
+
+    color:white;
+
+
+
+    font-size:17px;
+
+
+
+    font-weight:800;
+
+
+
+    cursor:pointer;
+
+
+    position:relative;
+
+
+    z-index:5;
+
+
+
+    overflow:hidden;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    #065f46,
+
+    #16a34a,
+
+    #22c55e
+
+    );
+
+
+
+    box-shadow:
+
+
+    0 18px 40px
+
+    rgba(22,163,74,.35);
+
+
+
+    transition:.4s;
+
+}
+
+
+
+
+.continue-btn:hover{
+
+
+    transform:
+
+    translateY(-4px);
+
+
+
+    box-shadow:
+
+
+    0 25px 55px
+
+    rgba(22,163,74,.45);
+
+
+
+}
+
+
+
+
+
+/* =========================
+ PREMIUM NOTIFICATION
+========================= */
+
+
+.premium-toast{
+
+
+    position:fixed;
+
+
+    top:30px;
+
+
+    right:30px;
+
+
+
+    z-index:9999999;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:14px;
+
+
+
+    min-width:320px;
+
+
+
+    padding:18px 24px;
+
+
+
+    border-radius:18px;
+
+
+
+    backdrop-filter:blur(20px);
+
+
+
+    animation:
+
+    toastShow .5s ease;
+
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.25);
+
+}
+
+
+
+.premium-toast span{
+
+
+    width:35px;
+
+
+    height:35px;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    border-radius:50%;
+
+
+
+    font-size:20px;
+
+
+
+    font-weight:800;
+
+}
+
+
+
+.premium-toast p{
+
+
+    margin:0;
+
+
+    font-weight:700;
+
+}
+
+
+
+
+
+.premium-toast.success{
+
+
+    background:
+
+    rgba(22,163,74,.15);
+
+
+
+    border:
+
+    1px solid
+
+    rgba(22,163,74,.4);
+
+
+
+    color:#166534;
+
+}
+
+
+
+
+.premium-toast.success span{
+
+
+    background:#16a34a;
+
+
+    color:white;
+
+}
+
+
+
+
+
+.premium-toast.error{
+
+
+    background:
+
+    rgba(220,38,38,.12);
+
+
+
+    border:
+
+    1px solid
+
+    rgba(220,38,38,.35);
+
+
+
+    color:#991b1b;
+
+}
+
+
+
+
+
+.premium-toast.error span{
+
+
+    background:#dc2626;
+
+
+    color:white;
+
+}
+
+
+
+
+
+
+/* =========================
+ ANIMATIONS
+========================= */
+
+
+@keyframes modalShow{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(50px)
+
+scale(.92);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+}
+
+
+}
+
+
+
+
+@keyframes fadeIn{
+
+
+from{
+
+opacity:0;
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+
+@keyframes toastShow{
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+
+translateY(-40px)
+
+scale(.9);
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+
+}
+
+
+}
+
+
+
+
+
+
+/* =========================
+ MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+.order-modal{
+
+
+padding:25px;
+
+border-radius:26px;
+
+
+}
+
+
+
+.order-modal h2{
+
+
+font-size:28px;
+
+
+}
+
+
+.continue-btn{
+
+
+font-size:16px;
+
+padding:15px;
+
+
+}
+
+
+
+.premium-toast{
+
+
+right:15px;
+
+left:15px;
+
+min-width:auto;
+
+
+}
+
+
+
+}
+
+
+
+
+
+@media(max-width:480px){
+
+
+
+.order-overlay{
+
+
+padding:12px;
+
+
+}
+
+
+
+.order-modal{
+
+
+padding:20px;
+
+
+border-radius:22px;
+
+
+}
+
+
+
+.order-modal h2{
+
+
+font-size:24px;
+
+
+}
+
+
+
+.field input,
+.field textarea{
+
+
+font-size:14px;
+
+
+}
+
+
+}
