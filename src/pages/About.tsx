@@ -14,7 +14,7 @@ const About: React.FC = () => {
       <section className="about-hero">
         <div className="container hero-content">
           <span className="about-tag">🌿 Nature's Purest Harvest</span>
-          <h1>Welcome to CocoFresh</h1>
+          <h1>Welcome to GreensBasket</h1>
           <p className="hero-text">
             We are more than just a brand; we are a movement towards healthier living. 
             Committed to bringing premium, farm-fresh agricultural products—starting 

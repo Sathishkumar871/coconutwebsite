@@ -27,7 +27,7 @@ function Gallery() {
       <div className="container">
         <div className="section-title">
           <span>OUR GALLERY</span>
-          <h2>Our Coconut Farms</h2>
+          <h2>Our Farm Fresh</h2>
         </div>
 
         {/* ఇక్కడ క్లిక్ ఆప్షన్స్ ఏవీ లేవు, కేవలం ఫోటోలు మాత్రమే */}

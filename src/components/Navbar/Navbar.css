@@ -1,198 +1,287 @@
-/* ==============================
-   ULTRA-PREMIUM NAVBAR (V2)
-============================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --nav-bg: rgba(2, 26, 14, 0.75);
+  --gold-metallic: #d4af37;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --green-accent: #38ef7d;
+  --text-white: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+}
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(2, 26, 14, 0.7); 
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--nav-bg); 
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
 .navbar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 6%;
+  padding: 0 5%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-/* Logo - More Sophisticated */
-.logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: white; }
-.logo-icon { font-size: 1.6rem; }
-.logo-text h2 { font-size: 1.3rem; margin: 0; font-weight: 700; letter-spacing: 0.5px; }
-.logo-text p { font-size: 0.6rem; letter-spacing: 3px; color: #159447; margin: 0; font-weight: 800; text-transform: uppercase; }
-
-/* Navigation Links - Clean & Minimal */
-.nav { display: flex; gap: 35px; align-items: center; }
-.nav a { 
-  color: rgba(255, 255, 255, 0.8); 
+/* ==============================================
+   1. BRAND LOGO
+============================================== */
+.logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 14px; 
   text-decoration: none; 
-  font-weight: 400; 
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: 0.4s ease;
 }
 
-.nav a:hover { color: #fff; }
+.logo-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #00592d 0%, #002211 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.logo:hover .logo-icon {
+  transform: translateY(-2px) scale(1.05);
+  border-color: var(--gold-metallic);
+  box-shadow: 0 12px 25px var(--gold-glow);
+}
+
+.logo-text h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.logo-text p {
+  margin-top: 3px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--green-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ==============================================
+   2. NAVIGATION LINKS & ORDER NOW BUTTON
+============================================== */
+.nav { 
+  display: flex; 
+  gap: 28px; 
+  align-items: center; 
+}
+
+.nav a { 
+  color: var(--text-muted); 
+  text-decoration: none; 
+  font-weight: 600; 
+  font-size: 0.85rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav a:hover { 
+  color: var(--text-white); 
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
 .active-link {
-  color: #d4af37 !important;
-  position: relative;
+  color: var(--gold-metallic) !important;
+  font-weight: 700;
 }
 
 .active-link::after {
   content: "";
   position: absolute;
-  bottom: -5px; left: 0; width: 100%; height: 2px;
-  background: #d4af37;
+  bottom: -2px; 
+  left: 0; 
+  width: 100%; 
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-metallic), var(--green-accent));
   border-radius: 2px;
+  box-shadow: 0 0 8px var(--gold-metallic);
 }
 
-/* PREMIUM ANIMATED ORDER BUTTON */
-.order-btn-premium {
-  position: relative;
-  background: transparent;
-  color: #fff;
-  padding: 7px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 400;
-  font-size: 0.85rem;
+/* Premium Animated Order Now Button in Nav */
+.btn-order-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
+  color: var(--gold-metallic) !important;
+  padding: 8px 20px !important;
+  border-radius: 30px;
+  font-weight: 800 !important;
+  font-size: 0.8rem !important;
   letter-spacing: 1.5px;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  cursor: not-allowed;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
   overflow: hidden;
-  transition: 0.5s;
 }
 
-.order-btn-premium:hover {
-  border-color: rgba(212, 175, 55, 0.9);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+.btn-order-glow:hover {
+  background: linear-gradient(135deg, var(--gold-metallic) 0%, #b8860b 100%);
+  color: #000000 !important;
+  border-color: var(--gold-metallic);
+  box-shadow: 0 0 25px var(--gold-glow);
+  transform: translateY(-2px);
 }
 
-/* Luxury Shine Animation */
-.order-btn-premium::before {
-  content: "";
+/* ==============================================
+   3. LUXURY USER ACCOUNT & LOGOUT ACTIONS
+============================================== */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 40px;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-metallic), #00592d);
+  color: #000;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  position: relative;
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.online-indicator {
   position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.4), transparent);
-  animation: shine 3s infinite;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--green-accent);
+  border: 2px solid #002211;
+  border-radius: 50%;
 }
 
-@keyframes shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
+.user-info label {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Mobile Menu */
+.user-info h4 {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+/* Luxury Logout Button */
+.btn-logout-luxury {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.25);
+  color: #ff9999;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-logout-luxury:hover {
+  background: #ff4d4d;
+  color: #ffffff;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+  transform: scale(1.03);
+}
+
+.btn-login-gold {
+  background: linear-gradient(135deg, var(--gold-metallic) 0%, #b8860b 100%);
+  color: #000;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 10px 22px;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--gold-glow);
+}
+
+.btn-login-gold:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Mobile Styling */
 .menu-btn { 
-  display: none; background: none; border: none; color: white; 
-  font-size: 1.5rem; cursor: pointer; margin-left: 20px;
+  display: none; 
+  background: none; 
+  border: none; 
+  color: var(--text-white); 
+  font-size: 1.6rem; 
+  cursor: pointer; 
 }
 
 @media (max-width: 950px) {
   .menu-btn { display: block; }
   .nav { 
-    position: absolute; top: 100%; left: 0; width: 100%; 
-    background: rgba(2, 26, 14, 0.98);
-    flex-direction: column; padding: 30px 0;
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    background: rgba(2, 20, 10, 0.98);
+    backdrop-filter: blur(25px);
+    flex-direction: column; 
+    padding: 25px 0;
+    gap: 20px;
     display: none; 
-    border-bottom: 2px solid #159447;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
   }
   .nav.active { display: flex; }
-}
-/* =========================
-   PREMIUM LOGO
-========================== */
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    text-decoration:none;
-}
-
-.logo-icon{
-    width:60px;
-    height:60px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:18px;
-    background:linear-gradient(145deg,#1B5E20,#183818);
-    box-shadow:
-        0 12px 28px rgba(27,94,32,.28),
-        inset 0 1px 1px rgba(255,255,255,.18);
-    transition:all .35s ease;
-    overflow:hidden;
-}
-
-.logo-icon svg{
-    width:54px;
-    height:54px;
-    transition:transform .35s ease;
-}
-
-.logo:hover .logo-icon{
-    transform:translateY(-3px) scale(1.06);
-    box-shadow:
-        0 18px 36px rgba(27,94,32,.38),
-        0 0 20px rgba(212,175,55,.18);
-}
-
-.logo:hover .logo-icon svg{
-    transform:rotate(-6deg);
-}
-
-/* ==========================
-   LOGO TEXT
-========================== */
-
-.logo-text h2{
-    margin:0;
-    font-size:1.7rem;
-    font-weight:800;
-    color:#1B5E20;
-    letter-spacing:.4px;
-    line-height:1;
-}
-
-.logo-text p{
-    margin-top:5px;
-    font-size:.82rem;
-    font-weight:600;
-    color:#6B7280;
-    letter-spacing:1px;
-    text-transform:uppercase;
-}
-
-/* ==========================
-   RESPONSIVE
-========================== */
-
-@media (max-width:768px){
-
-    .logo-icon{
-        width:50px;
-        height:50px;
-        border-radius:15px;
-    }
-
-    .logo-icon svg{
-        width:44px;
-        height:44px;
-    }
-
-    .logo-text h2{
-        font-size:1.35rem;
-    }
-
-    .logo-text p{
-        font-size:.68rem;
-    }
+  .user-info { display: none; }
 }

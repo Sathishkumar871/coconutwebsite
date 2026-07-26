@@ -105,9 +105,7 @@ message:""
 
 
 
-
 const minimum = 500;
-
 
 
 
@@ -118,6 +116,20 @@ const handleContinue = async()=>{
 
 
 console.log("BUTTON CLICKED");
+
+
+
+// Coconut price per piece
+
+const pricePerPiece = 30;
+
+
+
+const totalAmount =
+
+Number(quantity) * pricePerPiece;
+
+
 
 
 
@@ -156,6 +168,7 @@ showNotification(
 return;
 
 }
+
 
 
 
@@ -221,6 +234,7 @@ return;
 
 
 
+
 try{
 
 
@@ -273,11 +287,19 @@ unit:"pieces",
 
 
 
-amount:0,
+amount:totalAmount,
 
 
 
-paymentMethod:"UPI"
+paymentStatus:"Pending",
+
+
+
+paymentMethod:"UPI",
+
+
+
+orderStatus:"Pending"
 
 
 
@@ -293,7 +315,9 @@ paymentMethod:"UPI"
 
 
 
+
 const data = await response.json();
+
 
 
 
@@ -329,6 +353,7 @@ setAddress("");
 
 
 
+
 setTimeout(()=>{
 
 
@@ -354,6 +379,8 @@ data.message || "Order failed"
 
 
 }
+
+
 
 
 
@@ -477,6 +504,7 @@ onClick={onClose}
 
 
 
+
 <h2>
 
 Bulk Order
@@ -492,6 +520,7 @@ Bulk Order
 Premium coconut export supply
 
 </p>
+
 
 
 
@@ -555,6 +584,7 @@ readOnly
 
 />
 
+
 </div>
 
 
@@ -582,6 +612,7 @@ value={grade}
 readOnly
 
 />
+
 
 </div>
 
@@ -646,13 +677,17 @@ type="tel"
 
 maxLength={10}
 
-placeholder="+91 _____________"
+placeholder="10 digit mobile number"
 
 value={phone}
 
 onChange={(e)=>
 
-setPhone(e.target.value)
+setPhone(
+
+e.target.value.replace(/\D/g,"")
+
+)
 
 }
 
@@ -716,7 +751,9 @@ onClick={handleContinue}
 
 >
 
+
 Submit Bulk Order →
+
 
 </button>
 
