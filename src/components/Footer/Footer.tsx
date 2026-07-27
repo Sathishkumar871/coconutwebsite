@@ -17,7 +17,7 @@ function Footer() {
         <div className="footer-admin">
 
           <Link to="/greenbasket-admin">
-            Admin Login
+            Admin portal
           </Link>
 
         </div>

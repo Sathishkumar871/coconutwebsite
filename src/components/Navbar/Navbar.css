@@ -1,24 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+/* ==============================================
+   COLOR PALETTE (ULTRA-PREMIUM)
+============================================== */
 :root {
-  --nav-bg: rgba(2, 26, 14, 0.75);
-  --gold-metallic: #d4af37;
-  --gold-glow: rgba(212, 175, 55, 0.35);
-  --green-accent: #38ef7d;
+  --nav-bg: rgba(10, 12, 16, 0.75);          /* Deeper, more luxurious dark backdrop */
+  --accent-mint: #00ff87;                    /* Vibrant mint */
+  --accent-mint-hover: #00e676;
+  --accent-glow: rgba(0, 255, 135, 0.4);     
   --text-white: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.06); /* Sophisticated thin white glass edge */
+  --surface-dark: rgba(255, 255, 255, 0.03); /* Subtle surface highlight */
 }
 
+/* ==============================================
+   0. NAVBAR BASE (Luxury Glassmorphism)
+============================================== */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: var(--nav-bg); 
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease;
 }
 
@@ -26,57 +34,66 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 4%;
   max-width: 1440px;
   margin: 0 auto;
 }
 
 /* ==============================================
-   1. BRAND LOGO
+   1. BRAND LOGO 
 ============================================== */
 .logo { 
   display: flex; 
   align-items: center; 
-  gap: 14px; 
+  gap: 12px; 
   text-decoration: none; 
 }
 
 .logo-icon {
-  width: 52px;
-  height: 52px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #00592d 0%, #002211 100%);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
-  transition: all 0.4s ease;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(22, 27, 34, 1), rgba(10, 12, 16, 1));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .logo:hover .logo-icon {
   transform: translateY(-2px) scale(1.05);
-  border-color: var(--gold-metallic);
-  box-shadow: 0 12px 25px var(--gold-glow);
+  border-color: var(--accent-mint);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logo-text h2 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-white);
   letter-spacing: 0.5px;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .logo-text p {
-  margin-top: 3px;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: var(--green-accent);
+  margin: 4px 0 0 0;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--accent-mint);
   letter-spacing: 2px;
   text-transform: uppercase;
+  line-height: 1;
+  opacity: 0.9;
 }
 
 /* ==============================================
@@ -91,197 +108,287 @@
 .nav a { 
   color: var(--text-muted); 
   text-decoration: none; 
-  font-weight: 600; 
+  font-weight: 500; 
   font-size: 0.85rem;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.3s ease;
   position: relative;
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 .nav a:hover { 
   color: var(--text-white); 
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .active-link {
-  color: var(--gold-metallic) !important;
+  color: var(--text-white) !important;
   font-weight: 700;
 }
 
 .active-link::after {
   content: "";
   position: absolute;
-  bottom: -2px; 
-  left: 0; 
+  bottom: -4px; 
+  left: 50%; 
+  transform: translateX(-50%);
   width: 100%; 
   height: 2px;
-  background: linear-gradient(90deg, var(--gold-metallic), var(--green-accent));
+  background: var(--accent-mint);
   border-radius: 2px;
-  box-shadow: 0 0 8px var(--gold-metallic);
+  box-shadow: 0 0 12px var(--accent-mint);
 }
 
-/* Premium Animated Order Now Button in Nav */
+/* Animated, Premium Order Button */
 .btn-order-glow {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
-  color: var(--gold-metallic) !important;
+  background: linear-gradient(135deg, #00ff87, #00bfff, #00ff87);
+  background-size: 200% 200%;
+  color: #050505 !important;
   padding: 8px 20px !important;
-  border-radius: 30px;
+  border-radius: 50px;
   font-weight: 800 !important;
-  font-size: 0.8rem !important;
-  letter-spacing: 1.5px;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
-  transition: all 0.4s ease;
+  font-size: 0.75rem !important;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
   position: relative;
   overflow: hidden;
+  animation: premiumGradient 4s ease infinite, premiumPulse 3s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+@keyframes premiumGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes premiumPulse {
+  0% { box-shadow: 0 0 15px rgba(0, 255, 135, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 135, 0.6); }
+  100% { box-shadow: 0 0 15px rgba(0, 255, 135, 0.3); }
 }
 
 .btn-order-glow:hover {
-  background: linear-gradient(135deg, var(--gold-metallic) 0%, #b8860b 100%);
-  color: #000000 !important;
-  border-color: var(--gold-metallic);
-  box-shadow: 0 0 25px var(--gold-glow);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 255, 135, 0.5);
 }
 
 /* ==============================================
-   3. LUXURY USER ACCOUNT & LOGOUT ACTIONS
+   3. PERFECTLY ALIGNED USER PROFILE & CLASSY LOGOUT
 ============================================== */
 .navbar-actions {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  align-items: center;    /* Keeps everything in the exact center vertically */
+  gap: 15px;
+  height: 40px; 
 }
 
+/* Sleek Profile Container */
 .user-profile-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px 14px;
-  border-radius: 40px;
+  border: 1px solid var(--glass-border);
+  padding: 4px 14px 4px 6px;
+  border-radius: 30px;
+  height: 36px;          /* Fixed height for the profile pill */
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.user-profile-wrapper:hover {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .user-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .avatar-circle {
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-metallic), #00592d);
-  color: #000;
+  background: var(--accent-mint);
+  color: #050505;
   font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   position: relative;
-  box-shadow: 0 0 10px var(--gold-glow);
+  box-shadow: 0 0 10px var(--accent-glow);
+  flex-shrink: 0;
 }
 
 .online-indicator {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 10px;
-  height: 10px;
-  background: var(--green-accent);
-  border: 2px solid #002211;
+  width: 8px;
+  height: 8px;
+  background: #00ff87;
+  border: 2px solid #0a0c10;
   border-radius: 50%;
 }
 
-.user-info label {
-  display: block;
-  font-size: 0.62rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .user-info h4 {
   margin: 0;
-  font-size: 0.88rem;
+  font-size: 0.75rem;
   color: var(--text-white);
   font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
-/* Luxury Logout Button */
+.user-info label {
+  margin-top: 2px;
+  display: block;
+  font-size: 0.5rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+/* Ultra-Premium, Perfectly Aligned Logout Button */
 .btn-logout-luxury {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 77, 77, 0.1);
-  border: 1px solid rgba(255, 77, 77, 0.25);
-  color: #ff9999;
-  padding: 7px 14px;
-  border-radius: 20px;
-  font-size: 0.78rem;
+  background: rgba(255, 60, 60, 0.05);       /* Very subtle rich red background */
+  border: 1px solid rgba(255, 60, 60, 0.2);  /* Soft glass border */
+  color: #ff5e5e;                            /* Elegant muted red text */
+  padding: 0 16px;
+  height: 32px;                              /* Exact height for perfect alignment */
+  border-radius: 20px;                       /* Pill shape matches profile */
+  font-size: 0.65rem;
   font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn-logout-luxury:hover {
-  background: #ff4d4d;
-  color: #ffffff;
-  border-color: #ff4d4d;
-  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
-  transform: scale(1.03);
+  background: rgba(255, 60, 60, 0.15);       /* Richer red on hover */
+  border-color: rgba(255, 60, 60, 0.4);
+  color: #ffffff;                            /* White text on hover for contrast */
+  box-shadow: 0 4px 15px rgba(255, 60, 60, 0.25);
+  transform: translateY(-1px);
 }
 
+.btn-logout-luxury:active {
+  transform: translateY(1px) scale(0.95);
+}
+
+/* Login Button */
 .btn-login-gold {
-  background: linear-gradient(135deg, var(--gold-metallic) 0%, #b8860b 100%);
-  color: #000;
+  background: rgba(0, 255, 135, 0.08);
+  border: 1px solid var(--accent-mint);
+  color: var(--accent-mint);
   text-decoration: none;
   font-weight: 800;
-  font-size: 0.82rem;
-  padding: 10px 22px;
-  border-radius: 30px;
-  letter-spacing: 1px;
+  font-size: 0.72rem;
+  padding: 0 14px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  letter-spacing: 0.8px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px var(--gold-glow);
+  box-sizing: border-box;
 }
 
 .btn-login-gold:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
+  background: var(--accent-mint);
+  color: #0d1117;
+  box-shadow: 0 0 15px var(--accent-glow);
 }
 
-/* Mobile Styling */
+/* ==============================================
+   4. MOBILE RESPONSIVE DESIGN
+============================================== */
 .menu-btn { 
   display: none; 
-  background: none; 
-  border: none; 
+  background: transparent; 
+  border: 1px solid var(--glass-border); 
   color: var(--text-white); 
-  font-size: 1.6rem; 
+  font-size: 1.2rem; 
+  padding: 6px 10px;
+  border-radius: 8px;
   cursor: pointer; 
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 @media (max-width: 950px) {
   .menu-btn { display: block; }
+
   .nav { 
     position: absolute; 
     top: 100%; 
     left: 0; 
     width: 100%; 
-    background: rgba(2, 20, 10, 0.98);
-    backdrop-filter: blur(25px);
+    background: rgba(10, 12, 16, 0.98);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     flex-direction: column; 
-    padding: 25px 0;
+    padding: 20px;
     gap: 20px;
-    display: none; 
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   }
-  .nav.active { display: flex; }
-  .user-info { display: none; }
+
+  .nav.active { 
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .nav a {
+    font-size: 1rem;
+    padding: 12px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .btn-order-glow {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0 !important;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text p { display: none; }
+  .user-info h4 { font-size: 0.65rem; }
+  .btn-logout-luxury { padding: 4px; }
 }
