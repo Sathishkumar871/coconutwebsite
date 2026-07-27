@@ -82,7 +82,7 @@ export default function TrackOrder() {
             <span className="search-icon">🔍</span>
             <input
               type="text"
-              placeholder="e.g. GB-2026-479973"
+              placeholder="e.g. GB-2026-123456"
               value={orderId}
               onChange={(e) => setOrderId(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && searchOrder()}
