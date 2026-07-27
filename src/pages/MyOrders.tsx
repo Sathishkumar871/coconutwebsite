@@ -78,7 +78,7 @@ export default function MyOrders(){
 
       const response =
       await fetch(
-        "http://localhost:5000/api/orders/my-orders",
+       "https://coconutbackend.onrender.com/api/orders/my-orders",
         {
 
           headers:{

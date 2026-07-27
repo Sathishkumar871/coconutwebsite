@@ -26,7 +26,7 @@ export default function TrackOrder() {
       setLoading(true);
       setError("");
 
-      const res = await fetch(`http://localhost:5000/api/orders/track/${orderId.trim()}`);
+      const res = await fetch(`https://coconutbackend.onrender.com/api/orders/track/${orderId.trim()}`);
       const data = await res.json();
 
       if (data.success) {
