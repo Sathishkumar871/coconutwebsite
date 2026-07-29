@@ -2,23 +2,24 @@
 :root {
   --agri-gold: #dfb23f;
   --agri-gold-glow: rgba(223, 178, 63, 0.4);
-  --agri-emerald: #0b2216; /* Deep luxury organic green background */
-  --glass-bg: rgba(11, 34, 22, 0.72); 
-  --glass-border: rgba(223, 178, 63, 0.2); /* Highlighted gold border */
+  
+  /* Rich Emerald Tinted Glass (No Pure Black) */
+  --glass-bg: rgba(8, 28, 18, 0.85); 
+  --glass-border: rgba(223, 178, 63, 0.35); 
   --glass-blur: blur(35px) saturate(220%);
 }
 
 /* Master Fixed Layout Positioning */
 .chatbot-wrapper {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 24px;
+  right: 24px;
   z-index: 999999;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 20px;
+  gap: 16px;
 }
 
 /* ==========================================================================
@@ -26,22 +27,21 @@
    ========================================================================== */
 .farmer-ai-trigger {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #091a11 0%, #123321 100%);
+  background: linear-gradient(135deg, #061a10 0%, #123321 100%);
   border: 1.5px solid rgba(223, 178, 63, 0.4);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.05);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
   backdrop-filter: blur(10px);
 }
 
-/* Organic liquid growth glow aura behind button */
 .harvest-glow-aura {
   position: absolute;
   top: -4px; left: -4px; right: -4px; bottom: -4px;
@@ -61,14 +61,14 @@
 }
 
 .farmer-ai-trigger:hover {
-  transform: translateY(-6px) scale(1.05);
+  transform: translateY(-4px) scale(1.04);
   border-color: var(--agri-gold);
-  box-shadow: 0 18px 45px rgba(223, 178, 63, 0.35);
+  box-shadow: 0 15px 35px rgba(223, 178, 63, 0.35);
 }
 
 .farmer-ai-trigger.active {
   transform: rotate(90deg);
-  background: rgba(11, 34, 22, 0.9);
+  background: rgba(8, 28, 18, 0.95);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -76,7 +76,6 @@
   opacity: 0.1;
 }
 
-/* Custom Farmer Core Organic Icon Graphic */
 .farmer-core-icon {
   position: relative;
   display: flex;
@@ -86,132 +85,132 @@
 }
 
 .sprout-main {
-  font-size: 28px;
-  filter: drop-shadow(0 0 8px rgba(76, 175, 80, 0.6));
+  font-size: 26px;
+  filter: drop-shadow(0 0 6px rgba(76, 175, 80, 0.6));
   animation: sproutPulse 3s ease-in-out infinite;
 }
 
 .harvest-accent {
   position: absolute;
-  bottom: 12px;
-  right: 10px;
-  font-size: 14px;
+  bottom: 10px;
+  right: 8px;
+  font-size: 13px;
   filter: drop-shadow(0 0 4px var(--agri-gold));
 }
 
 @keyframes sproutPulse {
   0%, 100% { transform: scale(1) translateY(0); }
-  50% { transform: scale(1.12) translateY(-2px); filter: drop-shadow(0 0 12px var(--agri-gold)); }
+  50% { transform: scale(1.1) translateY(-2px); filter: drop-shadow(0 0 10px var(--agri-gold)); }
 }
 
 .close-icon-svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   color: #ffffff;
 }
 
 /* ==========================================================================
-   ULTIMATE TRANS-GLASS CONTAINER (EMERALD & HIGHLIGHTED GOLD)
+   ULTIMATE TRANS-GLASS CONTAINER (EMERALD GREEN GLASS & GOLD GLOW)
    ========================================================================== */
 .chatbot-container.ultimate-glass-farmer {
-  width: 410px;
-  height: 650px;
-  max-height: 82vh;
+  width: 390px;
+  height: 600px;
+  max-height: 80vh;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
-  border-radius: 28px;
-  
-  /* HIGHLY HIGHLIGHTED BORDERS AND GLOW */
+  border-radius: 24px;
   border: 1.5px solid var(--glass-border);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6), 
-              0 0 30px rgba(223, 178, 63, 0.15), /* Ambient Luxury Gold Border Glow */
-              inset 0 1px 3px rgba(255, 255, 255, 0.1);
-  
+  box-shadow: 0 25px 60px rgba(4, 18, 11, 0.65), 
+              0 0 30px rgba(223, 178, 63, 0.18),
+              inset 0 1px 4px rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: organicSmoothReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: organicSmoothReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes organicSmoothReveal {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); filter: blur(10px); }
+  from { opacity: 0; transform: translateY(30px) scale(0.96); filter: blur(8px); }
   to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 
 /* Elite Emerald Glass Header */
 .chat-header {
-  padding: 24px 28px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
-  border-bottom: 1px solid rgba(223, 178, 63, 0.25); /* Bold Highlight line */
+  padding: 18px 22px;
+  background: linear-gradient(to bottom, rgba(14, 46, 29, 0.5) 0%, rgba(8, 28, 18, 0) 100%);
+  border-bottom: 1px solid rgba(223, 178, 63, 0.25);
 }
 
 .header-info {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .bot-avatar-container {
   position: relative;
-  width: 44px;
-  height: 44px;
-  background: linear-gradient(135deg, #091a11 0%, #163d27 100%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #061a10 0%, #163d27 100%);
   border: 1.5px solid var(--agri-gold);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(223, 178, 63, 0.3);
+  box-shadow: 0 0 12px rgba(223, 178, 63, 0.3);
 }
 
 .bot-avatar {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .live-pulse {
   position: absolute;
   bottom: 1px; right: 1px;
-  width: 9px; height: 9px;
+  width: 8px; height: 8px;
   background-color: #00ffaa;
   border-radius: 50%;
-  box-shadow: 0 0 10px #00ffaa;
+  box-shadow: 0 0 8px #00ffaa;
 }
 
 .chat-header h4 {
   margin: 0;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.6px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  letter-spacing: 0.5px;
 }
 
 .chat-header .status {
-  margin: 4px 0 0 0;
-  font-size: 11px;
+  margin: 3px 0 0 0;
+  font-size: 10px;
   color: var(--agri-gold);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   font-weight: 700;
 }
 
-/* Chat Body (Deep Rich Canvas Shadow) */
+/* Chat Body */
 .chat-body {
   flex: 1;
-  padding: 26px;
+  padding: 20px;
   overflow-y: auto;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(10, 35, 22, 0.25);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 
-/* High Highlight Message Container Target for ChatMessage Component Integration */
+/* CHANGED: Message Bubble Boxes Background (Emerald Glass instead of Black) */
 .chat-body .message-container {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(14, 46, 29, 0.65) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(223, 178, 63, 0.25);
+  box-shadow: 0 6px 20px rgba(2, 12, 7, 0.35);
   border-radius: 16px;
-  transition: all 0.3s;
+  color: #ffffff;
 }
 
 .chat-body::-webkit-scrollbar {
@@ -224,61 +223,61 @@
 
 /* Premium Agri Input Footer Area */
 .chat-footer {
-  padding: 20px 24px;
-  background: rgba(0, 0, 0, 0.35);
+  padding: 16px 20px;
+  background: rgba(8, 28, 18, 0.6);
   border-top: 1px solid rgba(223, 178, 63, 0.2);
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .chat-footer input {
   flex: 1;
-  border: 1px solid rgba(223, 178, 63, 0.25);
-  padding: 16px 24px;
-  border-radius: 30px;
-  font-size: 14px;
+  border: 1.2px solid rgba(223, 178, 63, 0.3);
+  padding: 12px 18px;
+  border-radius: 24px;
+  font-size: 13.5px;
   outline: none;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(14, 46, 29, 0.4);
   color: #ffffff;
   transition: all 0.3s ease;
 }
 
 .chat-footer input::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.4);
 }
 
-/* Input Focus High Highlight */
 .chat-footer input:focus {
   border-color: var(--agri-gold);
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 25px rgba(223, 178, 63, 0.25);
+  background: rgba(14, 46, 29, 0.85);
+  box-shadow: 0 0 20px rgba(223, 178, 63, 0.25);
 }
 
-/* Send Action Liquid Gold Style Button */
+/* Send Action Button */
 .send-btn {
   background: linear-gradient(135deg, var(--agri-gold) 0%, #b5891b 100%);
   border: none;
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 5px 18px rgba(223, 178, 63, 0.4);
+  box-shadow: 0 4px 15px rgba(223, 178, 63, 0.4);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
 }
 
 .send-btn svg {
-  width: 16px;
-  height: 16px;
-  color: #0b2216;
+  width: 15px;
+  height: 15px;
+  color: #061a10;
 }
 
 .send-btn:hover:not(:disabled) {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(223, 178, 63, 0.6);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(223, 178, 63, 0.55);
 }
 
 .send-btn:disabled {
@@ -293,30 +292,50 @@
 }
 
 /* ==========================================================================
-   MOBILE DEVICES OPTIMIZATION RULES
+   MOBILE DEVICES OPTIMIZATION RULES (Compact & Centered Alignment)
    ========================================================================== */
 @media (max-width: 480px) {
   .chatbot-wrapper {
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    align-items: flex-end;
   }
 
   .chatbot-container.ultimate-glass-farmer {
     width: 100%;
-    height: 65vh;
-    max-height: 500px;
-    bottom: 90px;
+    max-width: 400px;
+    height: 72vh;
+    max-height: 520px;
     position: fixed;
-    right: 20px;
-    left: 21px;
-    margin: 0 auto;
-    border-radius: 24px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(223, 178, 63, 0.2);
+    bottom: 84px;
+    right: 16px;
+    left: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(4, 18, 11, 0.7), 0 0 20px rgba(223, 178, 63, 0.2);
   }
 
   .farmer-ai-trigger {
-    width: 64px;
-    height: 64px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .chat-body {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .chat-footer {
+    padding: 12px 16px;
+  }
+
+  .chat-footer input {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .send-btn {
+    width: 38px;
+    height: 38px;
   }
 }

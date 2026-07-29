@@ -1,6 +1,4 @@
-// src/components/chatbot/smartSearch.ts
-
-import { chatbotData } from "./chatbotData";
+import { chatbotData, getEstimatedDelivery } from "./chatbotData";
 
 const normalize = (text: string): string => {
   return text
@@ -48,9 +46,41 @@ function applyCorrections(text: string): string {
 }
 
 export function searchAnswer(message: string): string {
+  const rawInput = message.toLowerCase();
   const input = applyCorrections(message);
 
-  // Exact / Contains Match
+  // 1. Check for location-based delivery estimation query (Dynamic Date Calculation)
+  if (
+    rawInput.includes("delivery") || 
+    rawInput.includes("delivary") || 
+    rawInput.includes("shipping") || 
+    rawInput.includes("when will") || 
+    rawInput.includes("transit") ||
+    rawInput.includes("reach") ||
+    rawInput.includes("days")
+  ) {
+    if (
+      rawInput.includes("hyderabad") || 
+      rawInput.includes("hyd") || 
+      rawInput.includes("secunderabad") || 
+      rawInput.includes("andhra") || 
+      rawInput.includes("ap") || 
+      rawInput.includes("telangana") || 
+      rawInput.includes("tg") || 
+      rawInput.includes("vizag") || 
+      rawInput.includes("vijayawada") ||
+      rawInput.includes("guntur") ||
+      rawInput.includes("bangalore") ||
+      rawInput.includes("chennai") ||
+      rawInput.includes("mumbai") ||
+      rawInput.includes("delhi") ||
+      rawInput.includes("india")
+    ) {
+      return getEstimatedDelivery(rawInput, new Date());
+    }
+  }
+
+  // 2. Exact / Contains Match
   for (const item of chatbotData) {
     for (const keyword of item.keywords) {
       const key = normalize(keyword);
@@ -65,7 +95,7 @@ export function searchAnswer(message: string): string {
     }
   }
 
-  // Word Match Score
+  // 3. Word Match Score
   let bestScore = 0;
   let bestAnswer = "";
 
@@ -96,14 +126,12 @@ export function searchAnswer(message: string): string {
 
 You can ask about:
 
-• Coconut
-• Cashew
-• Ginger
-• Turmeric
-• Today's Price
-• Delivery
-• Export
-• Return Policy
+• Coconut / Tender Coconut
+• Cashew / Kaju
+• Guntur Chilli & Spices
+• Today's Price & Quotation
+• Delivery & Location Timelines (e.g., "Delivery to Hyderabad")
+• Export & Return Policy
 • Contact Details
-• Bulk Orders`;
+• Bulk Orders & MOQ`;
 }
